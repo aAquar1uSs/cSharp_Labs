@@ -14,15 +14,26 @@ namespace LabNumber2
         private double k;
         private double result;
 
-        public Program(double i1,double i2)
+        public Program()
         {
             //init variables
-            nn = i1;
-            nk = i2;
+            nn = 0;
+            nk = 0;
             result = 0;
 
             //init methods
+            writeAndReadConsole();
             searchForUnknownVariables();
+        }
+
+        public void setN(double n)
+        {
+            this.n = n;
+        }
+
+        public void setK(double k)
+        {
+            this.k = k;
         }
 
         public void calculate()
@@ -42,8 +53,8 @@ namespace LabNumber2
 
         private void searchForUnknownVariables()
         {
-            n = Math.Sqrt(nn);
-            k = nk / n;
+            nn = Math.Pow(n,2);
+            nk = n * k;
         }
 
         private bool isValidate(double i1,double i2)
@@ -53,6 +64,15 @@ namespace LabNumber2
             }
 
             return false;
+        }
+
+        public void writeAndReadConsole()
+        {
+            Console.Write("N =");
+            setN(Convert.ToInt32(Console.ReadLine()));
+            Console.Write("k =");
+            setK(Convert.ToInt32(Console.ReadLine()));
+
         }
 
         public void print()
@@ -70,7 +90,7 @@ namespace LabNumber2
 
         static void Main(string[] args)
         {
-            Program p = new Program(9, 12);
+            Program p = new Program();
             p.calculate();
             p.print();
         }
