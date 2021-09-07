@@ -74,7 +74,7 @@ namespace LabNumber4
             }
         }
 
-        public void calculated()
+        public void calculate()
         {
             int i;
             int firstNumber = 0;
@@ -119,7 +119,7 @@ namespace LabNumber4
             Program p = new Program(20,20);
             p.arraySort();
             p.showArray();
-            p.calculated();
+            p.calculate();
             Console.ReadLine();
         }
     }
