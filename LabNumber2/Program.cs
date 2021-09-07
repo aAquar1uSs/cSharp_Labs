@@ -16,11 +16,13 @@ namespace LabNumber2
 
         public Program(double i1,double i2)
         {
+            //init variables
             nn = i1;
             nk = i2;
-            n = 0;
-            k = 0;
             result = 0;
+
+            //init methods
+            searchForUnknownVariables();
         }
 
         public void calculate()
@@ -30,8 +32,6 @@ namespace LabNumber2
                 Console.WriteLine("isValidate::Error::Please set the numbers like this: 0 <= nn <= nk ");
                 return ;
             }
-
-            delimeter();
            
             for(double i = nn; i <= nk; i++)
             {
@@ -40,7 +40,7 @@ namespace LabNumber2
             }
         }
 
-        private void delimeter()
+        private void searchForUnknownVariables()
         {
             n = Math.Sqrt(nn);
             k = nk / n;
@@ -70,7 +70,7 @@ namespace LabNumber2
 
         static void Main(string[] args)
         {
-            Program p = new Program(20, 12);
+            Program p = new Program(9, 12);
             p.calculate();
             p.print();
         }
