@@ -29,7 +29,7 @@ namespace LabNumber3
 
         public void setX1(int value)
         {
-            this.x1 = value;
+            x1 = value;
         }
 
         public int getX2()
@@ -39,7 +39,7 @@ namespace LabNumber3
 
         public void setX2(int value)
         {
-            this.x2 = value;
+            x2 = value;
         }
 
         public int getY1()
@@ -49,7 +49,7 @@ namespace LabNumber3
 
         public void setY1(int value)
         {
-            this.y1 = value;
+            y1 = value;
         }
 
         public int getY2()
@@ -91,7 +91,6 @@ namespace LabNumber3
 
         static void Main(string[] args)
         {
-         
             Program p = new Program();
             p.writeAndReadConsole();
 
