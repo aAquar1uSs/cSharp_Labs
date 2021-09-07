@@ -18,13 +18,7 @@ namespace Labs
             amperage = 0;
         }
 
-        public Program(double v, double a)
-        {
-            this.voltage = v;
-            this.amperage = a;
-        }
-
-        public double getVolage()
+        public double getVoltage()
         {
             return voltage;
         }
@@ -49,20 +43,19 @@ namespace Labs
             return voltage / amperage;
         }
 
-
+        public void writeAndReadConsole()
+        {
+            Console.Write("Voltage =");
+            setVoltage(Convert.ToDouble(Console.ReadLine()));
+            Console.Write("Amperage =");
+            setAmperage(Convert.ToDouble(Console.ReadLine()));
+        }
 
         static void Main(string[] args)
         {
             Program p = new Program();
-            p.setVoltage(36);
-            p.setAmperage(0.024);
-            Console.WriteLine("Init constructor without parametrs");
+            p.writeAndReadConsole();
             Console.WriteLine(p.calculateR());
-
-            Program p2 = new Program(40, 0.008);
-            Console.WriteLine("Using constructor with parametrs");
-            Console.WriteLine(p2.calculateR());
-
             Console.ReadLine();
         }
     }

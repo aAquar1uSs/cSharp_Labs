@@ -69,9 +69,9 @@ namespace LabNumber2
         public void writeAndReadConsole()
         {
             Console.Write("N =");
-            setN(Convert.ToInt32(Console.ReadLine()));
+            setN(Convert.ToDouble(Console.ReadLine()));
             Console.Write("k =");
-            setK(Convert.ToInt32(Console.ReadLine()));
+            setK(Convert.ToDouble(Console.ReadLine()));
 
         }
 
