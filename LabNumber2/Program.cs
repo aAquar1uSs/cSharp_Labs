@@ -23,7 +23,7 @@ namespace LabNumber2
 
             //init methods
             writeAndReadConsole();
-            searchForUnknownVariables();
+            searchOfUnknownVariables();
         }
 
         public void setN(double n)
@@ -51,7 +51,7 @@ namespace LabNumber2
             }
         }
 
-        private void searchForUnknownVariables()
+        private void searchOfUnknownVariables()
         {
             nn = Math.Pow(n,2);
             nk = n * k;

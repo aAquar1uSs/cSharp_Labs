@@ -11,7 +11,6 @@ namespace Labs
         private double voltage; //напряжение
         private double amperage; // Сила тока
 
-
         public Program()
         {
             voltage = 0;

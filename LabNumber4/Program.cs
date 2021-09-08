@@ -12,10 +12,10 @@ namespace LabNumber4
         private int arr_size;
         private int[] arr;
 
-        public Program(int number, int sizeArr)
+        public Program()
         {
-            setNumber(number);
-            setArraySize(sizeArr);
+            readAndWriteInConsole();
+            setArraySize(arr_size);
             initArray();
         }
 
@@ -116,7 +116,7 @@ namespace LabNumber4
 
         static void Main(string[] args)
         {
-            Program p = new Program(20,20);
+            Program p = new Program();
             p.arraySort();
             p.showArray();
             p.calculate();
