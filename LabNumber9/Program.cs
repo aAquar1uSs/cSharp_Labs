@@ -1,6 +1,7 @@
 ﻿using LabNumber9.Abstract;
 using LabNumber9.Task1;
 using LabNumber9.Task1.Entity;
+using LabNumber9.Task2.Collection;
 using System;
 
 namespace LabNumber9
@@ -20,6 +21,20 @@ namespace LabNumber9
             Console.WriteLine("Circle----------------------------------------------");
             Shape circle = new Circle("Circle",6);
             Console.WriteLine(circle);
+
+            Console.WriteLine("Picture----------------------------------------------");
+            Picture picture = new Picture(4);
+
+            picture.add(triangle);
+            picture.add(circle);
+            picture.add(square);
+            picture.add(triangle);
+
+            picture.delete("Square");
+            Console.WriteLine("------------------------------------------------------");
+            Console.WriteLine(picture.get(1));
+            Console.WriteLine("------------------------------------------------------");
+            picture.printAll();
         }
     }
 }

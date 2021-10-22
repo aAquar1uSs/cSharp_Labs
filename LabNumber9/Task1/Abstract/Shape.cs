@@ -19,6 +19,11 @@ namespace LabNumber9.Abstract
         {
             Color = "None";
         }
+        
+        public string getName()
+        {
+            return Name;
+        }
 
         public abstract double calculateArea();
 
@@ -28,7 +33,7 @@ namespace LabNumber9.Abstract
         {
             return "Name: " + Name + "\n" + "Amount top: " + AmountTop + "\n" 
                 + "Color: " + Color + "\n" + "Perimeter: " + calculatePerimeter() +
-               "\n" + "Square: " + calculateArea();
+               "\n" + "Area: " + calculateArea();
         }
 
     }
