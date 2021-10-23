@@ -1,4 +1,6 @@
 ﻿using LabNumber9.Abstract;
+using LabNumber9.Task3.Interfaces;
+using LabNumber9.Task3.Utils;
 using System;
 
 namespace LabNumber9.Task1
@@ -20,7 +22,7 @@ namespace LabNumber9.Task1
         public Square(string name, double sizeSide)
         {
             Name = name;
-            Color = "Yellow";
+            Color = "Green";
             sideLength = sizeSide;
         }
 
@@ -40,6 +42,13 @@ namespace LabNumber9.Task1
         public override double calculateArea()
         {
             return Math.Pow(sideLength,2);
+        }
+
+        public override void  Draw()
+        {
+            ColorManager.setConcoleColor(Color);
+            Console.WriteLine("Name= " + Name + "\n" + "Size= " + sideLength);
+            Console.ResetColor();
         }
     }
 }

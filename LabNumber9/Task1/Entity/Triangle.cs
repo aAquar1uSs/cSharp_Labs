@@ -1,4 +1,6 @@
 ﻿using LabNumber9.Abstract;
+using LabNumber9.Task3.Interfaces;
+using LabNumber9.Task3.Utils;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -18,7 +20,7 @@ namespace LabNumber9.Task1.Entity
         public Triangle(string name)
         {
             Name = name;
-            Color = "Brown";
+            Color = "Yellow";
             sizeSide = 10;
         }
 
@@ -26,7 +28,7 @@ namespace LabNumber9.Task1.Entity
         {
             Name = name;
             sizeSide = size;
-            Color = "Brown";
+            Color = "Yellow";
         }
 
         public Triangle(string name, double size, string color)
@@ -44,6 +46,13 @@ namespace LabNumber9.Task1.Entity
         public override double calculateArea()
         {
             return (Math.Sqrt(3) / 4) * (Math.Pow(sizeSide, 2));
+        }
+
+        public override void Draw()
+        {
+            ColorManager.setConcoleColor(Color);
+            Console.WriteLine("Name= " + Name + "\n" + "Size= " + sizeSide);
+            Console.ResetColor();
         }
     }
 }

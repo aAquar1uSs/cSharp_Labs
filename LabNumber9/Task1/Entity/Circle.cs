@@ -1,7 +1,7 @@
 ﻿using LabNumber9.Abstract;
+using LabNumber9.Task3.Interfaces;
+using LabNumber9.Task3.Utils;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace LabNumber9.Task1.Entity
 {
@@ -43,6 +43,13 @@ namespace LabNumber9.Task1.Entity
         public override double calculatePerimeter()
         {
             return (2 * Math.PI * radius); 
+        }
+
+        public override void Draw()
+        {
+            ColorManager.setConcoleColor(Color);
+            Console.WriteLine("Name= " + Name + "\n" + "Size= " + radius );
+            Console.ResetColor();
         }
     }
 }

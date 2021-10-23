@@ -1,12 +1,12 @@
 ﻿using LabNumber9.Abstract;
+using LabNumber9.Task3.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace LabNumber9.Task2.Collection
 {
-    class Picture
+    class Picture : IDraw
     {
         private List<Shape> shapes;
         private int size;
@@ -59,7 +59,7 @@ namespace LabNumber9.Task2.Collection
 
             return false;
         }
-        
+
         public Shape get(int index)
         {
             return shapes.ElementAt(index);
@@ -72,5 +72,14 @@ namespace LabNumber9.Task2.Collection
                 Console.WriteLine(entity);
             }
         }
+
+        public void Draw()
+        {
+            foreach (Shape entity in shapes)
+            {
+                entity.Draw();
+            }
+        }
+
     }
 }
