@@ -42,7 +42,7 @@ namespace Labs
             return voltage / amperage;
         }
 
-        public void writeAndReadConsole()
+        public void consoleHandler()
         {
             Console.Write("Voltage =");
             setVoltage(Convert.ToDouble(Console.ReadLine()));
@@ -53,7 +53,7 @@ namespace Labs
         static void Main(string[] args)
         {
             Program p = new Program();
-            p.writeAndReadConsole();
+            p.consoleHandler();
             Console.WriteLine(p.calculateR());
             Console.ReadLine();
         }
