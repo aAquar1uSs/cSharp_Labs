@@ -37,13 +37,13 @@ namespace LabNumber9.Task2.Collection
 
         public bool delete(Shape entity)
         {
-            if(!shapes.Contains(entity))
+            if(shapes.Contains(entity))
             {
-                Console.WriteLine("Element do not exist!");
-                return false;
+                shapes.Remove(entity);
+                return true;
             }
-            shapes.Remove(entity);
-            return true;
+            Console.WriteLine("Element does not exist!");
+            return false;
         }
 
         public bool delete(string name)
