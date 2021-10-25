@@ -22,7 +22,7 @@ namespace LabNumber2
             result = 0;
 
             //init methods
-            writeAndReadConsole();
+            consoleHandler();
             searchOfUnknownVariables();
         }
 
@@ -66,7 +66,7 @@ namespace LabNumber2
             return false;
         }
 
-        public void writeAndReadConsole()
+        public void consoleHandler()
         {
             Console.Write("N =");
             setN(Convert.ToDouble(Console.ReadLine()));
