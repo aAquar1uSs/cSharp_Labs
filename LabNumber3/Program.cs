@@ -73,7 +73,7 @@ namespace LabNumber3
             return false;
         }
 
-        public void writeAndReadConsole()
+        public void consoleHandler()
         {
             Console.WriteLine("Set the coordinates for the first board.");
             Console.Write("X1 =");
@@ -92,7 +92,7 @@ namespace LabNumber3
         static void Main(string[] args)
         {
             Program p = new Program();
-            p.writeAndReadConsole();
+            p.consoleHandler();
 
             Console.WriteLine(p.calculate());
             Console.ReadLine();

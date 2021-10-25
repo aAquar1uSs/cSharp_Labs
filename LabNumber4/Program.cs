@@ -14,7 +14,7 @@ namespace LabNumber4
 
         public Program()
         {
-            readAndWriteInConsole();
+            consoleHandler();
             setArraySize(arr_size);
             initArray();
         }
@@ -106,7 +106,7 @@ namespace LabNumber4
             Console.WriteLine(secondNumber);
         }
         
-        public void readAndWriteInConsole()
+        public void consoleHandler()
         {
             Console.Write("Enter number =");
             setNumber(Convert.ToInt32(Console.ReadLine()));
