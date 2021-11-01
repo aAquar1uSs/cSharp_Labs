@@ -16,46 +16,20 @@ namespace LabNumber6.Utils
                 reverse(value / 10); 
         }
 
-        public static void reverse(string str)
+        public static void reverse(string str,out string temp)
         {
             if (str.Length > 0)
-                reverse(str.Substring(1, str.Length - 1));
+                reverse(str.Substring(1, str.Length - 1), out temp);
             else
+            {
+                temp = null;
                 return;
+            }
 
-            Console.Write(str[0]);
+            temp += str[0];
         }
 
-        public static void reverse(double value)
-        {
-            double dst = 0;
-            int decPoint = 0;
-
-            while (value - (long)value > 0)
-            {
-                value = value * 10;
-                decPoint++;
-            }
-
-            int totalDigits = 0;
-
-            while (value > 0)
-            {
-                int d = (int)value % 10;
-                dst = dst * 10 + d;
-                value = (long)(value / 10);
-                totalDigits++;
-            }
-
-            if (decPoint > 0)
-            {
-                int reversedDecPoint = totalDigits - decPoint;
-                for (int i = 0; i < reversedDecPoint; i++) dst = dst / 10;
-            }
-            Console.WriteLine(dst);
-        }
-
-        public static void reverseArray(ref int[] array, out int [] result)
+        public static void reverse(ref int[] array, out int[] result)
         {
             for (int i = 0; i < array.Length / 2; i++)
             {
@@ -66,4 +40,7 @@ namespace LabNumber6.Utils
             result = array;
         }
     }
+
+
 }
+

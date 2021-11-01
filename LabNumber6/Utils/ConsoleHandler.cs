@@ -11,26 +11,24 @@ namespace LabNumber6.Utils
         public static int readNumbersFromConsole()
         {
             Console.WriteLine("Enter values:");
-            int numbers = Convert.ToInt32(Console.ReadLine());
-            return numbers;
+            return Convert.ToInt32(Console.ReadLine());
         }
 
         public static string readStringsFromConsole()
         {
             Console.WriteLine("Enter strings:");
-            string words = Console.ReadLine();
-            return words;
+            return Console.ReadLine();;
         }
 
         public static double readDoubleNumbersFromConsole()
         {
-            Console.WriteLine("Enter values:");
-            double numbers = Convert.ToDouble(Console.ReadLine());
-            return numbers;
+            Console.WriteLine("Enter values with point:");
+            return Convert.ToDouble(Console.ReadLine());;
         }
 
         public static void fillArray(int[] array)
         {
+            Console.WriteLine("Please fill array: ");
             for(int i = 0; i < array.Length; i++)
             {
                 array[i] = Convert.ToInt32(Console.ReadLine());
