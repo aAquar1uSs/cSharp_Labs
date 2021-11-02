@@ -9,11 +9,13 @@ namespace LabNumber6
 {
     class Program
     {
-        private  const int CAPACITY = 10;
+        private const int CAPACITY = 10;
         private static string temp = "";
 
         static void Main(string[] args)
         {
+            int[] array = new int[CAPACITY];
+
             //Reverse number
             commandReverseNumber();
             Console.WriteLine();
@@ -24,7 +26,15 @@ namespace LabNumber6
             //Reverse number with point
             commandReverseDoubleNumbers();
             //Reverse array
-            commandReverseArray();
+            commandReverseArray(array);
+
+            //Lab 10
+            Console.WriteLine("\nEven index: ");
+            array.evenIndex(); //разширение метода
+ 
+            Console.WriteLine("\n----------------------------------");
+            Console.WriteLine("\nOdd index: ");
+            array.oddIndex();          
 
             Console.Read();
         }
@@ -44,8 +54,8 @@ namespace LabNumber6
         {
             string str = ConsoleHandler.readStringsFromConsole();
             string[] words = str.Split(',');
-            temp = "";
             string result = "";
+            temp = "";
 
             for (int i = 0; i < words.Length; i++)
             {
@@ -61,32 +71,33 @@ namespace LabNumber6
             double number = ConsoleHandler.readDoubleNumbersFromConsole();
             string n = number.ToString();
             string[] numbersStr = n.Split('.');
-            temp = "";
             string result = "";
+            temp = "";
+
             for (int i = 0; i < numbersStr.Length; i++)
             {
                 ReverseManager.reverse(numbersStr[i], out temp);
                 result += temp + ".";
             }
+
             result = result.Remove(result.Length - 1);
-            double reversedNumber = double.Parse(result);
-            Console.WriteLine(reversedNumber);
+            number = double.Parse(result);
+            Console.WriteLine(number);
         }
 
-        public static void commandReverseArray()
+        public static void commandReverseArray(int[] array)
         {
-            int[] array = new int[CAPACITY];
             int[] result;
             ConsoleHandler.fillArray(array);
             ReverseManager.reverse(ref array, out result);
-            for (int i = 0; i < result.Length; i++)
-            {
-                Console.Write(result[i] + ",");
-            }
-
-            
+            showArray(result);
         }
-
-
+        public static void showArray(int[] array)
+        {
+            for (int i = 0; i < array.Length; i++)
+            {
+                Console.Write(array[i] + ",");
+            }
+        }
     }
 }
