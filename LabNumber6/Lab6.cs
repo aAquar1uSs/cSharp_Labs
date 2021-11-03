@@ -10,7 +10,7 @@ namespace LabNumber6
     class Lab6
     {
         private const int CAPACITY = 10;
-        private static string temp = "";
+        private static string buffer = "";
 
         static void Main(string[] args)
         { 
@@ -27,15 +27,6 @@ namespace LabNumber6
             int[] array = new int[CAPACITY];
             causeReverseArray(array);
 
-            //Lab 10
-
-            Console.WriteLine("\nEven index: ");
-            array.evenIndex(); //разширение метода
-            Console.WriteLine("\n----------------------------------");
-            Console.WriteLine("\nOdd index: ");
-            array.oddIndex();
-
-    
             Lab10.lab10_main();
 
             Console.Read();
@@ -48,41 +39,39 @@ namespace LabNumber6
 
         public static void causeReverseWord()
         {
-            ReverseManager.reverse(ConsoleHandler.readStringsFromConsole(), out temp);
-            Console.WriteLine(temp);
+            ReverseManager.reverse(ConsoleHandler.readStringsFromConsole(), out buffer);
+            Console.WriteLine(buffer);
         }
 
         public static void causeReverseString()
         {
             string[] words = ConsoleHandler.readStringsFromConsole().Split(',');
             string result = "";
-            temp = "";
+            buffer = "";
 
             for (int i = 0; i < words.Length; i++)
             {
-                ReverseManager.reverse(words[i], out temp);
-                result += temp + ",";
+                ReverseManager.reverse(words[i], out buffer);
+                result += buffer + ",";
             }
             result = result.Remove(result.Length - 1);
             Console.WriteLine(result);
         }
 
         public static void causeReverseDoubleNumbers()
-        {
-            double number = ConsoleHandler.readDoubleNumbersFromConsole();
-            string[] numbersStr = number.ToString().Split('.');
+        {    
+            string[] numbersStr = ConsoleHandler.readDoubleNumbersFromConsole().ToString().Split('.');
             string result = "";
-            temp = "";
+            buffer = "";
 
             for (int i = 0; i < numbersStr.Length; i++)
             {
-                ReverseManager.reverse(numbersStr[i], out temp);
-                result += temp + ".";
+                ReverseManager.reverse(numbersStr[i], out buffer);
+                result += buffer + ".";
             }
 
             result = result.Remove(result.Length - 1);
-            number = double.Parse(result);
-            Console.WriteLine(number);
+            Console.WriteLine(double.Parse(result));
         }
 
         public static void causeReverseArray(int[] array)

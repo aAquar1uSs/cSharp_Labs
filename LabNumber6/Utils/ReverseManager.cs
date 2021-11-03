@@ -32,7 +32,7 @@ namespace LabNumber6.Utils
         public static void reverse(double num, out double res)
         {
             double r = 0;
-            if(num > 0)
+            if (num > 0)
             {
                 r = (r * 10) + num % 10;
                 num = num / 10;

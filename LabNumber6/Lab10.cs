@@ -17,8 +17,6 @@ namespace LabNumber6
         {
             Console.WriteLine("\nLab number 10:\n ");
 
-           
-
             causeReverseNumber();
 
             causeReverseWord();
@@ -30,6 +28,12 @@ namespace LabNumber6
             int[] arr = new int[CAPACITY];
             ConsoleHandler.fillArray(arr);
             causeReverseArray(arr);
+
+            Console.WriteLine("\nEven index: ");
+            arr.evenIndex(); //разширение метода
+            Console.WriteLine("\n----------------------------------");
+            Console.WriteLine("\nOdd index: ");
+            arr.oddIndex();
 
         }
 
