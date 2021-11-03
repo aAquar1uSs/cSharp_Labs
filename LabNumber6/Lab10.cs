@@ -15,6 +15,14 @@ namespace LabNumber6
             Console.WriteLine("\nLab number 10:\n ");
             string buffer = "";
 
+            Console.WriteLine("\nEven index: ");
+            int[] array = new int[10];
+            array.evenIndex(); //разширение метода
+            Console.WriteLine("\n----------------------------------");
+            Console.WriteLine("\nOdd index: ");
+            array.oddIndex();
+
+
 
             int number = ConsoleHandler.readNumbersFromConsole();
             Console.WriteLine(number.reverse_ExtensionMethod());

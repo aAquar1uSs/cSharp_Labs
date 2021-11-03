@@ -31,5 +31,17 @@ namespace LabNumber6.Extensions
 
             return reversedString;
         }
+
+        public static int[] reverse_ExtensionMethod(this int[] array)
+        {
+            for (int i = 0; i < array.Length / 2; i++)
+            {
+                int tmp = array[i];
+                array[i] = array[array.Length - i - 1];
+                array[array.Length - i - 1] = tmp;
+            }
+
+            return array;
+        }
     }
 }

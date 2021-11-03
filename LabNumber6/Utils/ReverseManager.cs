@@ -29,6 +29,19 @@ namespace LabNumber6.Utils
             temp += str[0];
         }
 
+        public static void reverse(double num, out double res)
+        {
+            double r = 0;
+            if(num > 0)
+            {
+                r = (r * 10) + num % 10;
+                num = num / 10;
+            }
+
+            res = r;
+            reverse(num,out res);
+            
+        }
         public static void reverse(ref int[] array, out int[] result)
         {
             for (int i = 0; i < array.Length / 2; i++)

@@ -27,15 +27,9 @@ namespace LabNumber6
             int[] array = new int[CAPACITY];
             commandReverseArray(array);
 
+            test();
+
             //Lab 10
-            Console.WriteLine("\nEven index: ");
-            array.evenIndex(); //разширение метода
- 
-            Console.WriteLine("\n----------------------------------");
-            Console.WriteLine("\nOdd index: ");
-            array.oddIndex();
-
-
             Lab10.lab10_main();
 
             Console.Read();
@@ -65,6 +59,25 @@ namespace LabNumber6
             }
             result = result.Remove(result.Length - 1);
             Console.WriteLine(result);
+        }
+
+        public static void test()
+        {
+            double number = ConsoleHandler.readDoubleNumbersFromConsole();
+            double iPart = (int)number;
+            double dPart = number - iPart;
+            double res = 0;
+
+            double res1 = 0, res2 = 0;
+
+            ReverseManager.reverse(iPart, out res);
+            res1 = res;
+            res = 0;
+            ReverseManager.reverse(dPart, out res);
+            res2 = res;
+
+            res = res1 + res2;
+            Console.WriteLine("TEST=" + res); 
         }
 
         public static void commandReverseDoubleNumbers()
