@@ -7,15 +7,13 @@ using System.Threading.Tasks;
 
 namespace LabNumber6
 {
-    class Program
+    class Lab6
     {
         private const int CAPACITY = 10;
         private static string temp = "";
 
         static void Main(string[] args)
-        {
-            int[] array = new int[CAPACITY];
-
+        { 
             //Reverse number
             commandReverseNumber();
             Console.WriteLine();
@@ -26,6 +24,7 @@ namespace LabNumber6
             //Reverse number with point
             commandReverseDoubleNumbers();
             //Reverse array
+            int[] array = new int[CAPACITY];
             commandReverseArray(array);
 
             //Lab 10
@@ -34,7 +33,10 @@ namespace LabNumber6
  
             Console.WriteLine("\n----------------------------------");
             Console.WriteLine("\nOdd index: ");
-            array.oddIndex();          
+            array.oddIndex();
+
+
+            Lab10.lab10_main();
 
             Console.Read();
         }
@@ -52,8 +54,7 @@ namespace LabNumber6
 
         public static void commandReverseString()
         {
-            string str = ConsoleHandler.readStringsFromConsole();
-            string[] words = str.Split(',');
+            string[] words = ConsoleHandler.readStringsFromConsole().Split(',');
             string result = "";
             temp = "";
 
@@ -69,8 +70,7 @@ namespace LabNumber6
         public static void commandReverseDoubleNumbers()
         {
             double number = ConsoleHandler.readDoubleNumbersFromConsole();
-            string n = number.ToString();
-            string[] numbersStr = n.Split('.');
+            string[] numbersStr = number.ToString().Split('.');
             string result = "";
             temp = "";
 

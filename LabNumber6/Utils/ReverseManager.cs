@@ -37,6 +37,7 @@ namespace LabNumber6.Utils
                 array[i] = array[array.Length - i - 1];
                 array[array.Length - i - 1] = tmp;
             }
+
             result = array;
         }
     }

@@ -34,8 +34,6 @@ namespace LabNumber6.Utils
                 array[i] = Convert.ToInt32(Console.ReadLine());
             }
         }
-
-
-
     }
 }
+ 
