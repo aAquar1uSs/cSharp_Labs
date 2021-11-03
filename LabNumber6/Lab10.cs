@@ -10,29 +10,45 @@ namespace LabNumber6
 {
     class Lab10
     {
+        private static string buffer = "";
+        private static int CAPACITY = 10;
+
         public static void lab10_main()
         {
             Console.WriteLine("\nLab number 10:\n ");
-            string buffer = "";
 
-            Console.WriteLine("\nEven index: ");
-            int[] array = new int[10];
-            array.evenIndex(); //разширение метода
-            Console.WriteLine("\n----------------------------------");
-            Console.WriteLine("\nOdd index: ");
-            array.oddIndex();
+           
 
+            causeReverseNumber();
 
+            causeReverseWord();
 
+            causeReverseString();
+
+            causeReverseDoubleNumbers();
+
+            int[] arr = new int[CAPACITY];
+            ConsoleHandler.fillArray(arr);
+            causeReverseArray(arr);
+
+        }
+
+        public static void causeReverseNumber()
+        {
             int number = ConsoleHandler.readNumbersFromConsole();
             Console.WriteLine(number.reverse_ExtensionMethod());
+        }
 
+        public static void causeReverseWord()
+        {
             string word = ConsoleHandler.readStringsFromConsole();
             Console.WriteLine(word.reverse_ExtensionMethod());
+        }
 
+        public static void causeReverseString()
+        {
             string[] str = ConsoleHandler.readStringsFromConsole().Split(',');
-        
-            for(int i = 0; i < str.Length;i++)
+            for (int i = 0; i < str.Length; i++)
             {
                 buffer += str[i].reverse_ExtensionMethod();
                 buffer += ',';
@@ -40,22 +56,18 @@ namespace LabNumber6
             buffer = buffer.Remove(buffer.Length - 1);
             Console.WriteLine(buffer);
             buffer = "";
-
-
-            double num = ConsoleHandler.readDoubleNumbersFromConsole();
-            string[] numbersStr = num.ToString().Split('.');
-     
-            for (int i = 0; i < numbersStr.Length; i++)
-            {
-                buffer += numbersStr[i].reverse_ExtensionMethod();
-                buffer += ".";
-            }
-
-            buffer = buffer.Remove(buffer.Length - 1);
-            num = double.Parse(buffer);
-            Console.WriteLine(num);
-
-
         }
+
+        public static void causeReverseDoubleNumbers()
+        {
+           
+        }
+
+        public static void causeReverseArray(int[] array)
+        {
+            int[] arr = array.reverse_ExtensionMethod();
+            ArrayExtension.showArray(array);
+        }
+     
     }
 }

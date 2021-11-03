@@ -15,38 +15,44 @@ namespace LabNumber6
         static void Main(string[] args)
         { 
             //Reverse number
-            commandReverseNumber();
+            causeReverseNumber();
             Console.WriteLine();
             //Reverse word
-            commandReverseWord();
+            causeReverseWord();
             //Reverse strings
-            commandReverseString();
+            causeReverseString();
             //Reverse number with point
-            commandReverseDoubleNumbers();
+            causeReverseDoubleNumbers();
             //Reverse array
             int[] array = new int[CAPACITY];
-            commandReverseArray(array);
-
-            test();
+            causeReverseArray(array);
 
             //Lab 10
+
+            Console.WriteLine("\nEven index: ");
+            array.evenIndex(); //разширение метода
+            Console.WriteLine("\n----------------------------------");
+            Console.WriteLine("\nOdd index: ");
+            array.oddIndex();
+
+    
             Lab10.lab10_main();
 
             Console.Read();
         }
 
-        public static void commandReverseNumber()
+        public static void causeReverseNumber()
         {
             ReverseManager.reverse(ConsoleHandler.readNumbersFromConsole());
         }
 
-        public static void commandReverseWord()
+        public static void causeReverseWord()
         {
             ReverseManager.reverse(ConsoleHandler.readStringsFromConsole(), out temp);
             Console.WriteLine(temp);
         }
 
-        public static void commandReverseString()
+        public static void causeReverseString()
         {
             string[] words = ConsoleHandler.readStringsFromConsole().Split(',');
             string result = "";
@@ -61,26 +67,7 @@ namespace LabNumber6
             Console.WriteLine(result);
         }
 
-        public static void test()
-        {
-            double number = ConsoleHandler.readDoubleNumbersFromConsole();
-            double iPart = (int)number;
-            double dPart = number - iPart;
-            double res = 0;
-
-            double res1 = 0, res2 = 0;
-
-            ReverseManager.reverse(iPart, out res);
-            res1 = res;
-            res = 0;
-            ReverseManager.reverse(dPart, out res);
-            res2 = res;
-
-            res = res1 + res2;
-            Console.WriteLine("TEST=" + res); 
-        }
-
-        public static void commandReverseDoubleNumbers()
+        public static void causeReverseDoubleNumbers()
         {
             double number = ConsoleHandler.readDoubleNumbersFromConsole();
             string[] numbersStr = number.ToString().Split('.');
@@ -98,19 +85,13 @@ namespace LabNumber6
             Console.WriteLine(number);
         }
 
-        public static void commandReverseArray(int[] array)
+        public static void causeReverseArray(int[] array)
         {
             int[] result;
             ConsoleHandler.fillArray(array);
             ReverseManager.reverse(ref array, out result);
-            showArray(result);
+            ArrayExtension.showArray(result);
         }
-        public static void showArray(int[] array)
-        {
-            for (int i = 0; i < array.Length; i++)
-            {
-                Console.Write(array[i] + ",");
-            }
-        }
+     
     }
 }
