@@ -32,10 +32,10 @@ namespace LabNumber6
             causeReverseArray(arr);
 
             Console.WriteLine("\nEven index: ");
-            arr.evenIndex(); //разширение метода
+            causePrintEvenIndexes(arr);
             Console.WriteLine("\n----------------------------------");
             Console.WriteLine("\nOdd index: ");
-            arr.oddIndex();
+            causePrintOddIndexes(arr);
 
         }
 
@@ -75,6 +75,15 @@ namespace LabNumber6
             int[] arr = array.reverse_ExtensionMethod();
             ArrayExtension.showArray(array);
         }
-     
+
+        public static void causePrintOddIndexes(int[] arr)
+        {
+            arr.oddIndex();
+        }
+
+        public static void causePrintEvenIndexes(int[] arr)
+        {
+            arr.evenIndex(); //разширение метода
+        }
     }
 }
