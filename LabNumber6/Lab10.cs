@@ -25,6 +25,8 @@ namespace LabNumber6
 
             causeReverseDoubleNumbers();
 
+            Console.WriteLine();
+
             int[] arr = new int[CAPACITY];
             ConsoleHandler.fillArray(arr);
             causeReverseArray(arr);
@@ -64,7 +66,8 @@ namespace LabNumber6
 
         public static void causeReverseDoubleNumbers()
         {
-           
+            double number = ConsoleHandler.readDoubleNumbersFromConsole();
+            number.reverse_ExtensionMethod();
         }
 
         public static void causeReverseArray(int[] array)

@@ -32,38 +32,34 @@ namespace LabNumber6.Extensions
             return reversedString;
         }
 
-        public static double reverse_ExtensionMethod(this double src)
+        public static void reverse_ExtensionMethod(this double num)
         {
-            double dst = 0;
-            int decPoint = 0;
+            int iPart = (int)num;
+            
+            double dPart = 0;
 
-            while (src - (long)src > 0)
+            convertDecimalPartToInt(ref dPart, num, iPart);
+
+            int remainder;
+
+            // reverse the integer part
+            while ((remainder = iPart % 10) != 0)
             {
-                src = src * 10;
-                decPoint++;
+                Console.Write(remainder);
+                iPart = iPart / 10;
             }
 
-            int totalDigits = 0;
+            Console.Write(".");
 
-            while (src > 0)
+            // reverse the decimal part
+            while ((remainder = (int)dPart % 10) != 0)
             {
-                int d = (int)src % 10;
-                dst = dst * 10 + d;
-                src = (long)(src / 10);
-                totalDigits++;
+                Console.Write(remainder);
+                dPart = dPart / 10;
             }
-
-            if (decPoint > 0)
-            {
-                int reversedDecPoint = totalDigits - decPoint;
-                for (int i = 0; i < reversedDecPoint; i++) dst = dst / 10;
-            }
-
-            return dst;
-
         }
 
-        public static int[] reverse_ExtensionMethod(this int[] array)
+        public static int[] reverse_ExtensionMethod(this int[] array)   
         {
             for (int i = 0; i < array.Length / 2; i++)
             {
@@ -73,6 +69,33 @@ namespace LabNumber6.Extensions
             }
 
             return array;
+        }
+
+        private static int getDecimalDigitsCount(double number)
+        {
+            string[] str = number.ToString(new System.Globalization.NumberFormatInfo() { NumberDecimalSeparator = "." }).Split('.');
+            return str.Length == 2 ? str[1].Length : 0;
+        }
+
+        private static void convertDecimalPartToInt(ref double dPart, double num ,double iPart)
+        {
+            int count = getDecimalDigitsCount(num);
+
+            switch (count)
+            {
+                case 1:
+                    dPart = (num - iPart) * 10;
+                    break;
+                case 2:
+                    dPart = (num - iPart) * 100;
+                    break;
+                case 3:
+                    dPart = (num - iPart) * 1000;
+                    break;
+                default:
+                    Console.WriteLine("Error.");
+                    break;
+            }
         }
     }
 }
