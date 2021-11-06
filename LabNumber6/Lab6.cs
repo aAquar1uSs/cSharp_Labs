@@ -59,19 +59,19 @@ namespace LabNumber6
         }
 
         public static void causeReverseDoubleNumbers()
-        {    
-            string[] numbersStr = ConsoleHandler.readDoubleNumbersFromConsole().ToString().Split('.');
+        {
+            double number = ConsoleHandler.readDoubleNumbersFromConsole();
+            string numberStr = number.ToString();
+            string[] arrNumbers = numberStr.Split(',','.');
             string result = "";
-            buffer = "";
 
-            for (int i = 0; i < numbersStr.Length; i++)
+            for (int i = 0; i < arrNumbers.Length; i++)
             {
-                ReverseManager.reverse(numbersStr[i], out buffer);
-                result += buffer + ".";
+                ReverseManager.reverse(arrNumbers[i], out buffer);
+                result += buffer + '.';
             }
-
             result = result.Remove(result.Length - 1);
-            Console.WriteLine(double.Parse(result));
+            Console.WriteLine(result);
         }
 
         public static void causeReverseArray(int[] array)

@@ -11,19 +11,38 @@ namespace LabNumber6.Utils
         public static int readNumbersFromConsole()
         {
             Console.WriteLine("Enter values:");
-            return Convert.ToInt32(Console.ReadLine());
+            try{
+                return Convert.ToInt32(Console.ReadLine());
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine("Please, input correct data.-------->" + e);
+            }
+            return 0;
         }
 
         public static string readStringsFromConsole()
         {
             Console.WriteLine("Enter strings:");
-            return Console.ReadLine();;
+            try{
+                return Console.ReadLine();
+            } catch(Exception e)
+            {
+                Console.WriteLine("Please, input correct data.-------->" + e);
+            }
+            return "";
         }
 
         public static double readDoubleNumbersFromConsole()
         {
             Console.WriteLine("Enter values with point:");
-            return Convert.ToDouble(Console.ReadLine());;
+            try { 
+                return Convert.ToDouble(Console.ReadLine());
+            } catch(Exception e)
+            {
+                Console.WriteLine("Please, input correct data.-------->" + e);
+            }
+            return 0;
         }
 
         public static void fillArray(int[] array)
