@@ -44,7 +44,20 @@ namespace LabNumber8
                     Console.ReadLine();
                     break;
                 case 4:
-
+                    garage.ShowAllCars();
+                    garage.TakeTheCar(ConsoleHandler.ChooseCar());
+                    break;
+                case 5:
+                    garage.ShowEmptyPlaces();
+                    garage.ParkTheCar(ConsoleHandler.ChooseParkingPlace());
+                    break;
+                case 6:
+                    garage.ShowEmptyPlaces();
+                    Console.ReadLine();
+                    break;
+                default:
+                    Console.WriteLine("Error::Wrong operation!");
+                    Console.ReadLine();
                     break;
             }
         }

@@ -10,53 +10,117 @@ namespace LabNumber8.Entity
     {
         private static int defaultCapacity = 3;
         private int capacity;
-        private List<Car> garage;
+        private Car[] garage;
+        private Car currentCar;
 
         public Garage()
         {
-            garage = new List<Car>(defaultCapacity);
+            garage = new Car[defaultCapacity];
             capacity = defaultCapacity;
+            currentCar = null;
+            InitGaragePlaces();
         }
 
         public Garage(int capacity)
         {
-            garage = new List<Car>(capacity);
+            garage = new Car[capacity];
             this.capacity = capacity;
+            currentCar = null;
+            InitGaragePlaces();
         }
 
         public void AddCar(Car car)
         {
-            if (garage.Count >= capacity)
-                Console.WriteLine("Oopss,lack of space, sell a car or buy a new garage))))");
-            else
-                garage.Add(car);
+            if(garage.Length > capacity)
+            {
+                Console.WriteLine("Error::Lack of garage space!");
+                Console.ReadLine();
+                return;
+            }
+            Console.WriteLine("Please choose empty place!");
+            ShowEmptyPlaces();
+            Add(car, Convert.ToInt32(Console.ReadLine()));
+
         }
 
         public void SaleCar(int numberPlace)
         {
-            try
+           if(numberPlace > capacity && garage[numberPlace] == null)
             {
-                garage.Remove(garage[numberPlace]);
-            } catch (Exception e)
-            {
-                Console.WriteLine("Error:: Such a car does not exist!" + e.Message);
+                Console.WriteLine("Error::Please choose correct place!");
                 Console.ReadLine();
+                return;
             }
+            garage[numberPlace] = null;
         }
 
         public void ShowAllCars()
         {
-            for(int i = 0;i < garage.Count;i++)
+            for (int i = 0; i < garage.Length; i++)
             {
-                Console.WriteLine("Place: " + i);
-                Console.WriteLine(garage[i]);
-                Console.WriteLine("------------------");
+                if (garage[i] != null)
+                {
+                    Console.WriteLine("Place:" + i);
+                    Console.WriteLine(garage[i]);
+                    Console.WriteLine("------------------------");
+                }
             }
         }
 
-        public void TakeTheCar()
+        public void TakeTheCar(int place)
         {
+            if(place > capacity)
+            {
+                Console.WriteLine("Error::Please choose correct place!");
+                Console.ReadLine();
+                return;
+            }
 
+            currentCar = garage[place];
+            garage[place] = null;
+        }
+
+        public void ParkTheCar(int place)
+        {
+            if (place > capacity)
+            {
+                Console.WriteLine("Error::Please choose correct place!");
+                Console.ReadLine();
+                return;
+            }
+
+            garage[place] = currentCar;
+            currentCar = null;
+        }
+
+        public void ShowEmptyPlaces()
+        {
+            for(int i =0; i < garage.Length;i++)
+            {
+                if(garage[i] == null)
+                {
+                    Console.WriteLine("Place: " + i + " empty!");
+                }
+            }
+        }
+
+        private void Add(Car car, int index) 
+        {
+            if(garage.Length <= index && garage[index] != null)
+            {
+                Console.WriteLine("Error::Please choose correct place");
+                return;
+            }
+
+            garage[index] = car;
+        }
+
+        private void InitGaragePlaces()
+        {
+            for(int i = 0; i < garage.Length;i++)
+            {
+                garage[i] = null;
+            }
         }
     }
 }

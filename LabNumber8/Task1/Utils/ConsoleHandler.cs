@@ -16,6 +16,8 @@ namespace LabNumber8.Utils
                 "2 - sell the car" + '\n' +
                 "3 - check garage;" + '\n' +
                 "4 - take the car" + '\n' +
+                "5 - park the car" + '\n' +
+                "6 - show empty places" + '\n' +
                 "0 - exit");
         }
         
@@ -27,6 +29,12 @@ namespace LabNumber8.Utils
         public static int ChooseParkingPlace()
         {
             Console.WriteLine("Please choose the number parking place!");
+            return Convert.ToInt32(Console.ReadLine());
+        }
+
+        public static int ChooseCar()
+        {
+            Console.WriteLine("Please, choose the car!");
             return Convert.ToInt32(Console.ReadLine());
         }
 
@@ -50,7 +58,8 @@ namespace LabNumber8.Utils
                 Model = model,
                 Color = color,
                 Price = price,
-                Year = year
+                Year = year,
+                IsUsing = false
             };
 
             return newCar;

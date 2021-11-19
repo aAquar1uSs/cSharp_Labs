@@ -13,13 +13,14 @@ namespace LabNumber8.Entity
         private string color;
         private int year;
         private double price;
+        private bool isUsing;
 
         public string Name { get => name; set => name = value; }
         public string Model { get => model; set => model = value; }
         public string Color { get => color; set => color = value; }
         public int Year { get => year; set => year = value; }
         public double Price { get => price; set => price = value; }
-
+        public bool IsUsing { get => isUsing; set => isUsing = value; }
 
         public override string ToString()
         {
