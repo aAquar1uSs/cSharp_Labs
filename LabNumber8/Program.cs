@@ -13,11 +13,13 @@ namespace LabNumber8
         static void Main(string[] args)
         {
             Garage garage = new Garage(10);
+            garage.RegisterDelegate(new Garage.ErrorStateHandler(Color_Message));
+
             while (true)
             {
                 Console.Clear();
                 ConsoleHandler.FirstMessage();
-                int number = ConsoleHandler.ChooseAction();
+                int number = ConsoleHandler.SelectAction();
 
                 if (number == 0)
                     break;
@@ -37,7 +39,7 @@ namespace LabNumber8
                     break;
                 case 2:
                     garage.ShowAllCars();
-                    garage.SaleCar(ConsoleHandler.ChooseParkingPlace());
+                    garage.SaleCar(ConsoleHandler.SelectParkingPlace());
                     break;
                 case 3:
                     garage.ShowAllCars();
@@ -45,11 +47,11 @@ namespace LabNumber8
                     break;
                 case 4:
                     garage.ShowAllCars();
-                    garage.TakeTheCar(ConsoleHandler.ChooseCar());
+                    garage.TakeTheCar(ConsoleHandler.SelectCar());
                     break;
                 case 5:
                     garage.ShowEmptyPlaces();
-                    garage.ParkTheCar(ConsoleHandler.ChooseParkingPlace());
+                    garage.ParkTheCar(ConsoleHandler.SelectParkingPlace());
                     break;
                 case 6:
                     garage.ShowEmptyPlaces();
@@ -60,6 +62,14 @@ namespace LabNumber8
                     Console.ReadLine();
                     break;
             }
+        }
+
+        private static void Color_Message(string message)
+        {
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine(message);
+            Console.ReadLine();
+            Console.ResetColor();
         }
     }
 }

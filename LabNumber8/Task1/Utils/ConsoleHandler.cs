@@ -21,20 +21,26 @@ namespace LabNumber8.Utils
                 "0 - exit");
         }
         
-        public static int ChooseAction()
+        public static int SelectAction()
         {
             return Convert.ToInt32(Console.ReadLine());
         }
 
-        public static int ChooseParkingPlace()
+        public static int SelectParkingPlace()
         {
             Console.WriteLine("Please choose the number parking place!");
             return Convert.ToInt32(Console.ReadLine());
         }
 
-        public static int ChooseCar()
+        public static int SelectCar()
         {
             Console.WriteLine("Please, choose the car!");
+            return Convert.ToInt32(Console.ReadLine());
+        }
+
+        public static int SelectEmptyPlace()
+        {
+            Console.WriteLine("Please choose empty place!");
             return Convert.ToInt32(Console.ReadLine());
         }
 

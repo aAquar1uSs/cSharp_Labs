@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LabNumber8.Utils;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,6 +13,10 @@ namespace LabNumber8.Entity
         private int capacity;
         private Car[] garage;
         private Car currentCar;
+
+        public delegate void ErrorStateHandler(string message);
+
+        ErrorStateHandler error;
 
         public Garage()
         {
@@ -29,17 +34,25 @@ namespace LabNumber8.Entity
             InitGaragePlaces();
         }
 
+        public void RegisterDelegate(ErrorStateHandler err)
+        {
+            error = err;
+        }
+
+        public void UnregisterDeligate(ErrorStateHandler err)
+        {
+            error -= err;
+        }
+
         public void AddCar(Car car)
         {
             if(garage.Length > capacity)
             {
-                Console.WriteLine("Error::Lack of garage space!");
-                Console.ReadLine();
+                error("Error::Lack of garage space!");
                 return;
             }
-            Console.WriteLine("Please choose empty place!");
             ShowEmptyPlaces();
-            Add(car, Convert.ToInt32(Console.ReadLine()));
+            Add(car, ConsoleHandler.SelectEmptyPlace());
 
         }
 
@@ -47,8 +60,7 @@ namespace LabNumber8.Entity
         {
            if(numberPlace > capacity && garage[numberPlace] == null)
             {
-                Console.WriteLine("Error::Please choose correct place!");
-                Console.ReadLine();
+                error("Error::Please choose correct place!");
                 return;
             }
             garage[numberPlace] = null;
@@ -71,8 +83,7 @@ namespace LabNumber8.Entity
         {
             if(place > capacity)
             {
-                Console.WriteLine("Error::Please choose correct place!");
-                Console.ReadLine();
+                error("Error::Please choose correct place!");
                 return;
             }
 
@@ -84,8 +95,7 @@ namespace LabNumber8.Entity
         {
             if (place > capacity)
             {
-                Console.WriteLine("Error::Please choose correct place!");
-                Console.ReadLine();
+                error("Error::Please choose correct place!");
                 return;
             }
 
@@ -106,9 +116,9 @@ namespace LabNumber8.Entity
 
         private void Add(Car car, int index) 
         {
-            if(garage.Length <= index && garage[index] != null)
+            if(garage.Length <= index || garage[index] != null)
             {
-                Console.WriteLine("Error::Please choose correct place");
+                error("Error::Please choose correct place!");
                 return;
             }
 
