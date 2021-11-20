@@ -49,12 +49,16 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Task1\Utils\ActionHandler.cs" />
     <Compile Include="Task1\Utils\ConsoleHandler.cs" />
+    <Compile Include="Task2\Entity\BlackWhiteScreenPhone.cs" />
+    <Compile Include="Task2\Entity\ColourPhone.cs" />
+    <Compile Include="Task2\Entity\Phone.cs" />
+    <Compile Include="Task2\Entity\Rotaries.cs" />
+    <Compile Include="Task2\Entity\SmartPhone.cs" />
+    <Compile Include="Task2\Entity\TouchTonePhone.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Task2\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
