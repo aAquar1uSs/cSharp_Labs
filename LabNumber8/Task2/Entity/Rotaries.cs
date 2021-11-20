@@ -9,27 +9,27 @@ namespace LabNumber8.Task2.Entity
     class Rotaries : Phone
     {
         protected int phoneNumber;
-        protected List<string> validSymbols;
+        protected string[] validSymbols;
 
         public Rotaries()
         {
-            phoneNumber = 0;
+            SetPhoneNumber(0);
+            SetValidSymbol(new string[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "0" });
         }
+
         public Rotaries(int number)
         {
-            phoneNumber = number;
+            SetPhoneNumber(number);
+        }
 
-            validSymbols = new List<string>();
-            validSymbols.Add("1");
-            validSymbols.Add("2");
-            validSymbols.Add("3");
-            validSymbols.Add("4");
-            validSymbols.Add("5");
-            validSymbols.Add("6");
-            validSymbols.Add("7");
-            validSymbols.Add("8");
-            validSymbols.Add("9");
-            validSymbols.Add("0");
+        public void SetPhoneNumber(int number)
+        {
+            phoneNumber = number;
+        }
+
+        public void SetValidSymbol(string[] symb)
+        {
+            validSymbols = symb;
         }
 
         public virtual void MakeTheCall()
@@ -44,38 +44,44 @@ namespace LabNumber8.Task2.Entity
 
         public virtual void SendSMS(string message)
         {
-            throw new NotImplementedException();
+            throw new NotSupportedException();
         }
 
         public virtual void TakeSMS()
         {
-            throw new NotImplementedException();
+            throw new NotSupportedException();
         }
 
         public virtual void SendMMS(string message)
         {
-            throw new NotImplementedException();
+            throw new NotSupportedException();
         }
 
         public virtual void TakeMMS()
         {
-            throw new NotImplementedException();
+            throw new NotSupportedException();
         }
 
         public virtual void CreatePhoto()
         {
-            throw new NotImplementedException();
+            throw new NotSupportedException();
         }
 
         public virtual void CreateVideo()
         {
-            throw new NotImplementedException();
+            throw new NotSupportedException();
         }
 
         public  override string ToString()
         {
+            string buffer = "";
+            for (int i = 0; i < validSymbols.Length; i++)
+            {
+                buffer += validSymbols[i];
+            }
             return "Rotaries phone: " + '\n' +
-                "Phone number: " + phoneNumber + '\n';
+                "Phone number: " + phoneNumber + '\n' +
+                "Valid symbols: " + buffer ;
         }
 
     }

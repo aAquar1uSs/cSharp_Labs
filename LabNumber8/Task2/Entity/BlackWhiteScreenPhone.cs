@@ -8,34 +8,39 @@ namespace LabNumber8.Task2.Entity
 {
     class BlackWhiteScreenPhone : TouchTonePhone
     {
-        protected double resolution;
-        protected int sizeScreen;
+        protected float resolution;
+        protected double sizeScreen;
         protected string color;
-        protected List<string> validSymdolsForBWScreenPhone;
-
-        public BlackWhiteScreenPhone(int number)//default values
+        
+        public BlackWhiteScreenPhone()
         {
-            phoneNumber = number;
-            resolution = 1080 * 980;
-            color = "Black";
-            validSymdolsForBWScreenPhone = validSymbolsForTouchTonePhone;
-            InitValidSymbols();
+            SetPhoneNumber(0);
+            SetResolution(0);
+            SetColor("");
+            SetValidSymbol(new string[15] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "*", "#", "!", "-", "+" });
         }
 
-        public BlackWhiteScreenPhone(double res,int sizeScreen,string color)
+        public BlackWhiteScreenPhone(int number ,float res,double sizeScreen,string color)
         {
-            resolution = res;
-            this.sizeScreen = sizeScreen;
+            SetPhoneNumber(number);
+            SetResolution(res);
+            SetSizeScreen(sizeScreen);
+            SetColor(color);
+        }
+
+        public void SetResolution(float resolution)
+        {
+            this.resolution = resolution;
+        }
+
+        public void SetSizeScreen(double size)
+        {
+            sizeScreen = size;
+        }
+
+        public void SetColor(string color)
+        {
             this.color = color;
-            validSymdolsForBWScreenPhone = validSymbolsForTouchTonePhone;
-            InitValidSymbols();
-        }
-
-        private void InitValidSymbols()
-        {
-            validSymdolsForBWScreenPhone.Add("+");
-            validSymdolsForBWScreenPhone.Add("-");
-            validSymdolsForBWScreenPhone.Add("%");
         }
 
         public override void SendSMS(string message)
@@ -50,11 +55,18 @@ namespace LabNumber8.Task2.Entity
 
         public override string ToString()
         {
+            string buffer = "";
+            for (int i = 0; i < validSymbols.Length; i++)
+            {
+                buffer += validSymbols[i];
+            }
+
             return "Black-White Screen Phone: " + '\n' +
                 "Resolution: " + resolution + '\n' +
                 "Number phone: " + phoneNumber + '\n' +
                 "Color: " + color + '\n' +
-                "Size screen: " + sizeScreen + '\n';
+                "Size screen: " + sizeScreen + '\n' +
+                "Valid symbols: " + buffer ;
 
         }
 

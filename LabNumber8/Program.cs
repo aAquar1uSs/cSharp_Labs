@@ -1,5 +1,6 @@
 ﻿using LabNumber8.Entity;
 using LabNumber8.Task1.Utils;
+using LabNumber8.Task2.Entity;
 using LabNumber8.Utils;
 using System;
 using System.Collections.Generic;
