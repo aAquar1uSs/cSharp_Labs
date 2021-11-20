@@ -43,6 +43,13 @@ namespace LabNumber8.Entity
         {
             error -= err;
         }
+        private void InitGaragePlaces()
+        {
+            for (int i = 0; i < garage.Length; i++)
+            {
+                garage[i] = null;
+            }
+        }
 
         public void AddCar(Car car)
         {
@@ -114,6 +121,71 @@ namespace LabNumber8.Entity
             }
         }
 
+        public void FindCarsByParametrs(string parametr, int index)
+        {
+            if(index == 1)
+            {
+                FindByName(parametr);
+            } else if(index == 2)
+            {
+                FindByModel(parametr);
+            } else if (index == 3)
+            {
+                FindByYear(Convert.ToInt32(parametr));
+            } else if(index == 4)
+            {
+                FindByColor(parametr);
+            }
+        }
+
+        private void FindByName(string name)
+        {
+           for(int i = 0; i < garage.Length;i++)
+           {
+                if(garage[i] != null && garage[i].Name == name)
+                {
+                    Console.WriteLine("Place: " + i);
+                    Console.WriteLine(garage[i]);
+                }
+           }
+        }
+
+        private void FindByModel(string model)
+        {
+            for (int i = 0; i < garage.Length; i++)
+            {
+                if (garage[i] != null && garage[i].Model == model)
+                {
+                    Console.WriteLine("Place: " + i);
+                    Console.WriteLine(garage[i]);
+                }
+            }
+        }
+
+        private void FindByYear(int year)
+        {
+            for (int i = 0; i < garage.Length; i++)
+            {
+                if (garage[i] != null && garage[i].Year == year)
+                {
+                    Console.WriteLine("Place: " + i);
+                    Console.WriteLine(garage[i]);
+                }
+            }
+        }
+
+        private void FindByColor(string color)
+        {
+            for (int i = 0; i < garage.Length; i++)
+            {
+                if (garage[i] != null && garage[i].Color == color)
+                {
+                    Console.WriteLine("Place: " + i);
+                    Console.WriteLine(garage[i]);
+                }
+            }
+        }
+
         private void Add(Car car, int index) 
         {
             if(garage.Length <= index || garage[index] != null)
@@ -125,12 +197,5 @@ namespace LabNumber8.Entity
             garage[index] = car;
         }
 
-        private void InitGaragePlaces()
-        {
-            for(int i = 0; i < garage.Length;i++)
-            {
-                garage[i] = null;
-            }
-        }
     }
 }

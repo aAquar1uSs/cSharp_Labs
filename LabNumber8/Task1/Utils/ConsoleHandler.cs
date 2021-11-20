@@ -7,20 +7,30 @@ using System.Threading.Tasks;
 
 namespace LabNumber8.Utils
 {
-    class ConsoleHandler
+    class ConsoleHandler 
     {
         public static void FirstMessage()
         {
             Console.WriteLine("Please choose action!" + '\n' +
-                "1 - to buy a new car;" + '\n' + 
-                "2 - sell the car" + '\n' +
-                "3 - check garage;" + '\n' +
-                "4 - take the car" + '\n' +
-                "5 - park the car" + '\n' +
-                "6 - show empty places" + '\n' +
-                "0 - exit");
+                "1 - To buy a new car;" + '\n' + 
+                "2 - Sell the car;" + '\n' +
+                "3 - Check garage;" + '\n' +
+                "4 - Take the car by full parametrs;" + '\n' +
+                "5 - Take the car by:" + '\n' +
+                "6 - Park the car;" + '\n' +
+                "7 - Show empty places;" + '\n' +
+                "0 - Exit;");
         }
         
+        public static void MessageAboutCarParametrs()
+        {
+            Console.WriteLine("Please choose parametr!" + '\n' +
+                "1 - By name" + '\n' +
+                "2 - By model" + '\n' +
+                "3 - By year" + '\n' +
+                "4 - By cost" + '\n' +
+                "5 - By color" + '\n');        }
+
         public static int SelectAction()
         {
             return Convert.ToInt32(Console.ReadLine());
@@ -42,6 +52,12 @@ namespace LabNumber8.Utils
         {
             Console.WriteLine("Please choose empty place!");
             return Convert.ToInt32(Console.ReadLine());
+        }
+
+        public static string SelectCarName()
+        {
+            Console.WriteLine("Please enter name:");
+            return Console.ReadLine();
         }
 
 
