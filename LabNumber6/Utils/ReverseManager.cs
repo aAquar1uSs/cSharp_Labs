@@ -8,18 +8,18 @@ namespace LabNumber6.Utils
 {
     class ReverseManager
     {
-        public static void reverse(int value)
+        public static void Reverse(int value)
         {
             Console.Write(value % 10);
 
             if (value > 9)
-                reverse(value / 10); 
+                Reverse(value / 10); 
         }
 
-        public static void reverse(string str,out string temp)
+        public static void Reverse(string str,out string temp)
         {
             if (str.Length > 0)
-                reverse(str.Substring(1, str.Length - 1), out temp);
+                Reverse(str.Substring(1, str.Length - 1), out temp);
             else
             {
                 temp = null;
@@ -29,7 +29,7 @@ namespace LabNumber6.Utils
             temp += str[0];
         }
 
-        public static void reverse(ref int[] array, out int[] result)
+        public static void Reverse(ref int[] array, out int[] result)
         {
             for (int i = 0; i < array.Length / 2; i++)
             {

@@ -8,7 +8,7 @@ namespace LabNumber6.Utils
 {
     class ConsoleHandler
     {
-        public static int readNumbersFromConsole()
+        public static int ReadNumbersFromConsole()
         {
             Console.WriteLine("Enter values:");
             try{
@@ -21,7 +21,7 @@ namespace LabNumber6.Utils
             return 0;
         }
 
-        public static string readStringsFromConsole()
+        public static string ReadStringsFromConsole()
         {
             Console.WriteLine("Enter strings:");
             try{
@@ -33,7 +33,7 @@ namespace LabNumber6.Utils
             return "";
         }
 
-        public static double readDoubleNumbersFromConsole()
+        public static double ReadDoubleNumbersFromConsole()
         {
             Console.WriteLine("Enter values with point:");
             try { 
@@ -45,7 +45,7 @@ namespace LabNumber6.Utils
             return 0;
         }
 
-        public static void fillArray(int[] array)
+        public static void FillArray(int[] array)
         {
             Console.WriteLine("Please fill array: ");
             for(int i = 0; i < array.Length; i++)

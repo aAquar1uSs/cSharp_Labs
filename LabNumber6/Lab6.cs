@@ -15,71 +15,71 @@ namespace LabNumber6
         static void Main(string[] args)
         { 
             //Reverse number
-            causeReverseNumber();
+            СauseReverseNumber();
             Console.WriteLine();
             //Reverse word
-            causeReverseWord();
+            СauseReverseWord();
             //Reverse strings
-            causeReverseString();
+            СauseReverseString();
             //Reverse number with point
-            causeReverseDoubleNumbers();
+            СauseReverseDoubleNumbers();
             //Reverse array
             int[] array = new int[CAPACITY];
-            causeReverseArray(array);
+            СauseReverseArray(array);
 
             Lab10.lab10_main();
 
             Console.Read();
         }
 
-        public static void causeReverseNumber()
+        public static void СauseReverseNumber()
         {
-            ReverseManager.reverse(ConsoleHandler.readNumbersFromConsole());
+            ReverseManager.Reverse(ConsoleHandler.ReadNumbersFromConsole());
         }
 
-        public static void causeReverseWord()
+        public static void СauseReverseWord()
         {
-            ReverseManager.reverse(ConsoleHandler.readStringsFromConsole(), out buffer);
+            ReverseManager.Reverse(ConsoleHandler.ReadStringsFromConsole(), out buffer);
             Console.WriteLine(buffer);
         }
 
-        public static void causeReverseString()
+        public static void СauseReverseString()
         {
-            string[] words = ConsoleHandler.readStringsFromConsole().Split(',');
+            string[] words = ConsoleHandler.ReadStringsFromConsole().Split(',');
             string result = "";
             buffer = "";
 
             for (int i = 0; i < words.Length; i++)
             {
-                ReverseManager.reverse(words[i], out buffer);
+                ReverseManager.Reverse(words[i], out buffer);
                 result += buffer + ",";
             }
             result = result.Remove(result.Length - 1);
             Console.WriteLine(result);
         }
 
-        public static void causeReverseDoubleNumbers()
+        public static void СauseReverseDoubleNumbers()
         {
-            double number = ConsoleHandler.readDoubleNumbersFromConsole();
+            double number = ConsoleHandler.ReadDoubleNumbersFromConsole();
             string numberStr = number.ToString();
             string[] arrNumbers = numberStr.Split(',','.');
             string result = "";
 
             for (int i = 0; i < arrNumbers.Length; i++)
             {
-                ReverseManager.reverse(arrNumbers[i], out buffer);
+                ReverseManager.Reverse(arrNumbers[i], out buffer);
                 result += buffer + '.';
             }
             result = result.Remove(result.Length - 1);
             Console.WriteLine(result);
         }
 
-        public static void causeReverseArray(int[] array)
+        public static void СauseReverseArray(int[] array)
         {
             int[] result;
-            ConsoleHandler.fillArray(array);
-            ReverseManager.reverse(ref array, out result);
-            ArrayExtension.showArray(result);
+            ConsoleHandler.FillArray(array);
+            ReverseManager.Reverse(ref array, out result);
+            ArrayExtension.ShowArray(result);
         }
      
     }

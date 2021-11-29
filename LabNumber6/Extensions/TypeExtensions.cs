@@ -8,7 +8,7 @@ namespace LabNumber6.Extensions
 {
     public static class TypeExtensions
     {
-        public static int reverse_ExtensionMethod(this int value)
+        public static int Reverse_ExtensionMethod(this int value)
         {
             int result = 0;
             while (value > 0)
@@ -20,7 +20,7 @@ namespace LabNumber6.Extensions
             return result;
         } 
 
-        public static string reverse_ExtensionMethod(this string str)
+        public static string Reverse_ExtensionMethod(this string str)
         {
             string reversedString = string.Empty;
 
@@ -32,13 +32,13 @@ namespace LabNumber6.Extensions
             return reversedString;
         }
 
-        public static void reverse_ExtensionMethod(this double num)
+        public static void Reverse_ExtensionMethod(this double num)
         {
             int iPart = (int)num;
             
             double dPart = 0;
 
-            convertDecimalPartToInt(ref dPart, num, iPart);
+            ConvertDecimalPartToInt(ref dPart, num, iPart);
 
             int remainder;
 
@@ -59,7 +59,7 @@ namespace LabNumber6.Extensions
             }
         }
 
-        public static int[] reverse_ExtensionMethod(this int[] array)   
+        public static int[] Reverse_ExtensionMethod(this int[] array)   
         {
             for (int i = 0; i < array.Length / 2; i++)
             {
@@ -71,15 +71,15 @@ namespace LabNumber6.Extensions
             return array;
         }
 
-        private static int getDecimalDigitsCount(double number)
+        private static int GetDecimalDigitsCount(double number)
         {
             string[] str = number.ToString(new System.Globalization.NumberFormatInfo() { NumberDecimalSeparator = "." }).Split('.');
             return str.Length == 2 ? str[1].Length : 0;
         }
 
-        private static void convertDecimalPartToInt(ref double dPart, double num ,double iPart)
+        private static void ConvertDecimalPartToInt(ref double dPart, double num ,double iPart)
         {
-            int count = getDecimalDigitsCount(num);
+            int count = GetDecimalDigitsCount(num);
 
             switch (count)
             {

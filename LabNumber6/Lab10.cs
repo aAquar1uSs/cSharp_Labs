@@ -17,46 +17,46 @@ namespace LabNumber6
         {
             Console.WriteLine("\nLab number 10:\n ");
 
-            causeReverseNumber();
+            СauseReverseNumber();
 
-            causeReverseWord();
+            СauseReverseWord();
 
-            causeReverseString();
+            СauseReverseString();
 
-            causeReverseDoubleNumbers();
+            СauseReverseDoubleNumbers();
 
             Console.WriteLine();
 
             int[] arr = new int[CAPACITY];
-            ConsoleHandler.fillArray(arr);
-            causeReverseArray(arr);
+            ConsoleHandler.FillArray(arr);
+            СauseReverseArray(arr);
 
             Console.WriteLine("\nEven index: ");
             causePrintEvenIndexes(arr);
             Console.WriteLine("\n----------------------------------");
             Console.WriteLine("\nOdd index: ");
-            causePrintOddIndexes(arr);
+            СausePrintOddIndexes(arr);
 
         }
 
-        public static void causeReverseNumber()
+        public static void СauseReverseNumber()
         {
-            int number = ConsoleHandler.readNumbersFromConsole();
-            Console.WriteLine(number.reverse_ExtensionMethod());
+            int number = ConsoleHandler.ReadNumbersFromConsole();
+            Console.WriteLine(number.Reverse_ExtensionMethod());
         }
 
-        public static void causeReverseWord()
+        public static void СauseReverseWord()
         {
-            string word = ConsoleHandler.readStringsFromConsole();
-            Console.WriteLine(word.reverse_ExtensionMethod());
+            string word = ConsoleHandler.ReadStringsFromConsole();
+            Console.WriteLine(word.Reverse_ExtensionMethod());
         }
 
-        public static void causeReverseString()
+        public static void СauseReverseString()
         {
-            string[] str = ConsoleHandler.readStringsFromConsole().Split(',');
+            string[] str = ConsoleHandler.ReadStringsFromConsole().Split(',');
             for (int i = 0; i < str.Length; i++)
             {
-                buffer += str[i].reverse_ExtensionMethod();
+                buffer += str[i].Reverse_ExtensionMethod();
                 buffer += ',';
             }
             buffer = buffer.Remove(buffer.Length - 1);
@@ -64,26 +64,26 @@ namespace LabNumber6
             buffer = "";
         }
 
-        public static void causeReverseDoubleNumbers()
+        public static void СauseReverseDoubleNumbers()
         {
-            double number = ConsoleHandler.readDoubleNumbersFromConsole();
-            number.reverse_ExtensionMethod();
+            double number = ConsoleHandler.ReadDoubleNumbersFromConsole();
+            number.Reverse_ExtensionMethod();
         }
 
-        public static void causeReverseArray(int[] array)
+        public static void СauseReverseArray(int[] array)
         {
-            int[] arr = array.reverse_ExtensionMethod();
-            ArrayExtension.showArray(array);
+            int[] arr = array.Reverse_ExtensionMethod();
+            ArrayExtension.ShowArray(array);
         }
 
-        public static void causePrintOddIndexes(int[] arr)
+        public static void СausePrintOddIndexes(int[] arr)
         {
-            arr.oddIndex();
+            arr.OddIndex();
         }
 
         public static void causePrintEvenIndexes(int[] arr)
         {
-            arr.evenIndex(); //разширение метода
+            arr.EvenIndex(); //разширение метода
         }
     }
 }

@@ -8,7 +8,7 @@ namespace LabNumber6.Utils
 {
     public static class ArrayExtension
     {
-        public static int[] evenIndex(this int[] array)
+        public static int[] EvenIndex(this int[] array)
         {
             for (int i = 0; i < array.Length; i++)
             {
@@ -20,7 +20,7 @@ namespace LabNumber6.Utils
             return array;
         }
 
-        public static int[] oddIndex(this int[] array)
+        public static int[] OddIndex(this int[] array)
         {
             for (int i = 0; i < array.Length; i++)
             {
@@ -32,7 +32,7 @@ namespace LabNumber6.Utils
             return array;
         }
 
-        public static void showArray(int[] array)
+        public static void ShowArray(int[] array)
         {
             for (int i = 0; i < array.Length; i++)
             {
