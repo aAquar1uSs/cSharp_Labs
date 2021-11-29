@@ -32,7 +32,7 @@ namespace LabNumber6
             СauseReverseArray(arr);
 
             Console.WriteLine("\nEven index: ");
-            causePrintEvenIndexes(arr);
+            CausePrintEvenIndexes(arr);
             Console.WriteLine("\n----------------------------------");
             Console.WriteLine("\nOdd index: ");
             СausePrintOddIndexes(arr);
@@ -81,7 +81,7 @@ namespace LabNumber6
             arr.OddIndex();
         }
 
-        public static void causePrintEvenIndexes(int[] arr)
+        public static void CausePrintEvenIndexes(int[] arr)
         {
             arr.EvenIndex(); //разширение метода
         }
