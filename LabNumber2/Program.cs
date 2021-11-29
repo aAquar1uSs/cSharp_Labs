@@ -22,23 +22,23 @@ namespace LabNumber2
             result = 0;
 
             //init methods
-            consoleHandler();
-            searchOfUnknownVariables();
+            ConsoleHandler();
+            SearchOfUnknownVariables();
         }
 
-        public void setN(double n)
+        public void SetN(double n)
         {
             this.n = n;
         }
 
-        public void setK(double k)
+        public void SetK(double k)
         {
             this.k = k;
         }
 
-        public void calculate()
+        public void Calculate()
         {
-            if(!isValidate(nn, nk))
+            if(!IsValidate(nn, nk))
             {
                 Console.WriteLine("isValidate::Error::Please set the numbers like this: 0 <= nn <= nk ");
                 return ;
@@ -51,13 +51,13 @@ namespace LabNumber2
             }
         }
 
-        private void searchOfUnknownVariables()
+        private void SearchOfUnknownVariables()
         {
             nn = Math.Pow(n,2);
             nk = n * k;
         }
 
-        private bool isValidate(double i1,double i2)
+        private bool IsValidate(double i1,double i2)
         {
             if (i2 >= i1 && i1 >= 0) {
                 return true;
@@ -66,16 +66,16 @@ namespace LabNumber2
             return false;
         }
 
-        public void consoleHandler()
+        public void ConsoleHandler()
         {
             Console.Write("N =");
-            setN(Convert.ToDouble(Console.ReadLine()));
+            SetN(Convert.ToDouble(Console.ReadLine()));
             Console.Write("k =");
-            setK(Convert.ToDouble(Console.ReadLine()));
+            SetK(Convert.ToDouble(Console.ReadLine()));
 
         }
 
-        public void print()
+        public void Print()
         {
             if(result == 0)
             {
@@ -91,8 +91,8 @@ namespace LabNumber2
         static void Main(string[] args)
         {
             Program p = new Program();
-            p.calculate();
-            p.print();
+            p.Calculate();
+            p.Print();
         }
     }
 }

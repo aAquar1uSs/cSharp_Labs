@@ -17,44 +17,44 @@ namespace Labs
             amperage = 0;
         }
 
-        public double getVoltage()
+        public double GetVoltage()
         {
             return voltage;
         }
 
-        public void setVoltage(double v)
+        public void SetVoltage(double v)
         {
             this.voltage = v;
         }
 
-        public double getAmperage()
+        public double GetAmperage()
         {
             return amperage;
         }
 
-        public void setAmperage(double a)
+        public void SetAmperage(double a)
         {
             this.amperage = a;
         }
 
-        public double calculateR()
+        public double CalculateR()
         {
             return voltage / amperage;
         }
 
-        public void consoleHandler()
+        public void ConsoleHandler()
         {
             Console.Write("Voltage =");
-            setVoltage(Convert.ToDouble(Console.ReadLine()));
+            SetVoltage(Convert.ToDouble(Console.ReadLine()));
             Console.Write("Amperage =");
-            setAmperage(Convert.ToDouble(Console.ReadLine()));
+            SetAmperage(Convert.ToDouble(Console.ReadLine()));
         }
 
         static void Main(string[] args)
         {
             Program p = new Program();
-            p.consoleHandler();
-            Console.WriteLine(p.calculateR());
+            p.ConsoleHandler();
+            Console.WriteLine(p.CalculateR());
             Console.ReadLine();
         }
     }

@@ -22,50 +22,50 @@ namespace LabNumber3
             y2 = 0;
         }
 
-        public int getX1()
+        public int GetX1()
         {
             return x1;
         }
 
-        public void setX1(int value)
+        public void SetX1(int value)
         {
             x1 = value;
         }
 
-        public int getX2()
+        public int GetX2()
         {
             return x2;
         }
 
-        public void setX2(int value)
+        public void SetX2(int value)
         {
             x2 = value;
         }
 
-        public int getY1()
+        public int GetY1()
         {
             return y1;
         }
 
-        public void setY1(int value)
+        public void SetY1(int value)
         {
             y1 = value;
         }
 
-        public int getY2()
+        public int GetY2()
         {
             return y2;
         }
 
-        public void setY2(int value)
+        public void SetY2(int value)
         {
             this.y2 = value;
         }
 
-        public bool calculate()
+        public bool Calculate()
         {
             //получаем модуль числа
-            if (Math.Abs(getX1() - getX2()) <= 1 && Math.Abs(getY1() - getY2()) <= 1)
+            if (Math.Abs(GetX1() - GetX2()) <= 1 && Math.Abs(GetY1() - GetY2()) <= 1)
             {
                 return true;
             }
@@ -73,28 +73,28 @@ namespace LabNumber3
             return false;
         }
 
-        public void consoleHandler()
+        public void ConsoleHandler()
         {
             Console.WriteLine("Set the coordinates for the first board.");
             Console.Write("X1 =");
-            setX1(Convert.ToInt32(Console.ReadLine()));
+            SetX1(Convert.ToInt32(Console.ReadLine()));
             Console.Write("Y1 =");
-            setY1(Convert.ToInt32(Console.ReadLine()));
+            SetY1(Convert.ToInt32(Console.ReadLine()));
 
             Console.WriteLine("Set the coordinates for the second board.");
             Console.Write("X2 =");
-            setX2(Convert.ToInt32(Console.ReadLine()));
+            SetX2(Convert.ToInt32(Console.ReadLine()));
             Console.Write("Y2 =");
-            setY2(Convert.ToInt32(Console.ReadLine()));
+            SetY2(Convert.ToInt32(Console.ReadLine()));
         }
 
 
         static void Main(string[] args)
         {
             Program p = new Program();
-            p.consoleHandler();
+            p.ConsoleHandler();
 
-            Console.WriteLine(p.calculate());
+            Console.WriteLine(p.Calculate());
             Console.ReadLine();
         }
     }

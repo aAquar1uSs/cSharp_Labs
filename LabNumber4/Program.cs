@@ -14,55 +14,55 @@ namespace LabNumber4
 
         public Program()
         {
-            consoleHandler();
-            setArraySize(arr_size);
-            initArray();
+            ConsoleHandler();
+            SetArraySize(arr_size);
+            InitArray();
         }
 
-        public int getNumber()
+        public int GetNumber()
         {
             return number;
         }
 
-        public void setNumber(int v)
+        public void SetNumber(int v)
         {
             number = v;
         }
 
-        public void setArraySize(int size)
+        public void SetArraySize(int size)
         {
             arr_size = size;
         }
 
-        public int getArraySize()
+        public int GetArraySize()
         {
             return arr_size;
         }
 
-        private void initArray()
+        private void InitArray()
         {
-            arr = new int[getArraySize()];
+            arr = new int[GetArraySize()];
             Random random = new Random();
-            for(int index = 0; index < getArraySize();index++)
+            for(int index = 0; index < GetArraySize();index++)
             {
                 arr[index] = random.Next(-30,30);
             }
         }
 
-        public void showArray()
+        public void ShowArray()
         {
-            for (int index = 0; index < getArraySize(); index++)
+            for (int index = 0; index < GetArraySize(); index++)
             {
                 Console.WriteLine(arr[index]);
             }
         }
 
-        public void arraySort()
+        public void ArraySort()
         {
             int temp;
-            for (int i = 0; i < getArraySize() - 1; i++)
+            for (int i = 0; i < GetArraySize() - 1; i++)
             {
-                for (int j = i + 1; j < getArraySize(); j++)
+                for (int j = i + 1; j < GetArraySize(); j++)
                 {
                     if (arr[i] > arr[j])
                     {
@@ -74,24 +74,24 @@ namespace LabNumber4
             }
         }
 
-        public void calculate()
+        public void Calculate()
         {
             int i;
             int firstNumber = 0;
             int secondNumber = 0;
-            for(i = 0; i < getArraySize();i++)
+            for(i = 0; i < GetArraySize();i++)
             {
                 int left = i;
-                int right = getArraySize() - 1;
+                int right = GetArraySize() - 1;
                 while(right > left)
                 {
-                    if(arr[right] + arr[left] - getNumber() == 0)
+                    if(arr[right] + arr[left] - GetNumber() == 0)
                     {
                         firstNumber = arr[right];
                         secondNumber = arr[left];
                     }
 
-                    if (arr[right] + arr[left] - getNumber() > 0)
+                    if (arr[right] + arr[left] - GetNumber() > 0)
                     {
                         right--;
                     }
@@ -106,20 +106,20 @@ namespace LabNumber4
             Console.WriteLine(secondNumber);
         }
         
-        public void consoleHandler()
+        public void ConsoleHandler()
         {
             Console.Write("Enter number =");
-            setNumber(Convert.ToInt32(Console.ReadLine()));
+            SetNumber(Convert.ToInt32(Console.ReadLine()));
             Console.Write("Enter array size");
-            setArraySize(Convert.ToInt32(Console.ReadLine()));
+            SetArraySize(Convert.ToInt32(Console.ReadLine()));
         }
 
         static void Main(string[] args)
         {
             Program p = new Program();
-            p.arraySort();
-            p.showArray();
-            p.calculate();
+            p.ArraySort();
+            p.ShowArray();
+            p.Calculate();
             Console.ReadLine();
         }
     }
