@@ -24,11 +24,11 @@ namespace LabNumber8.Entity
 
         public override string ToString()
         {
-            return "Name: " + name + '\n' +
-                "Model: " + model + '\n' +
-                "Color: " + color + '\n' +
-                "Year: " + year + '\n' + 
-                "Price: " + price;
+            return $"Name: {Name}" + '\n' +
+                $"Model: {Model}" + '\n' +
+                $"Color: {Color}" + '\n' +
+                $"Year: {Year}" + '\n' +
+                $"Price: {Price}";
         }
     }
 }

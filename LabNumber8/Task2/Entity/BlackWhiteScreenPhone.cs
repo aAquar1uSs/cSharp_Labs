@@ -62,11 +62,11 @@ namespace LabNumber8.Task2.Entity
             }
 
             return "Black-White Screen Phone: " + '\n' +
-                "Resolution: " + resolution + '\n' +
-                "Number phone: " + phoneNumber + '\n' +
-                "Color: " + color + '\n' +
-                "Size screen: " + sizeScreen + '\n' +
-                "Valid symbols: " + buffer ;
+                $"Resolution: {resolution}" + '\n' +
+                $"Number phone: {phoneNumber}" + '\n' +
+                $"Color: {color}" + '\n' +
+                $"Size screen: {sizeScreen}" + '\n' +
+                $"Valid symbols: {buffer}";
 
         }
 

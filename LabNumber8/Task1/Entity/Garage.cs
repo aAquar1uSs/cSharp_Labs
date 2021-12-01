@@ -76,7 +76,7 @@ namespace LabNumber8.Task1.Entity
             {
                 if (garage[i] != null)
                 {
-                    Console.WriteLine("Place:" + i);
+                    Console.WriteLine($"Place: {i}");
                     Console.WriteLine(garage[i]);
                     Console.WriteLine("------------------------");
                 }
@@ -113,7 +113,7 @@ namespace LabNumber8.Task1.Entity
             {
                 if(garage[i] == null)
                 {
-                    Console.WriteLine("Place: " + i + " empty!");
+                    Console.WriteLine($"Place: {i} empty!");
                 }
             }
         }
@@ -141,7 +141,7 @@ namespace LabNumber8.Task1.Entity
            {
                 if(garage[i] != null && garage[i].Name == name)
                 {
-                    Console.WriteLine("Place: " + i);
+                    Console.WriteLine($"Place: {i}");
                     Console.WriteLine(garage[i]);
                 }
            }
@@ -153,7 +153,7 @@ namespace LabNumber8.Task1.Entity
             {
                 if (garage[i] != null && garage[i].Model == model)
                 {
-                    Console.WriteLine("Place: " + i);
+                    Console.WriteLine($"Place: {i}");
                     Console.WriteLine(garage[i]);
                 }
             }
@@ -165,7 +165,7 @@ namespace LabNumber8.Task1.Entity
             {
                 if (garage[i] != null && garage[i].Year == year)
                 {
-                    Console.WriteLine("Place: " + i);
+                    Console.WriteLine($"Place: {i}");
                     Console.WriteLine(garage[i]);
                 }
             }
@@ -177,7 +177,7 @@ namespace LabNumber8.Task1.Entity
             {
                 if (garage[i] != null && garage[i].Color == color)
                 {
-                    Console.WriteLine("Place: " + i);
+                    Console.WriteLine($"Place: {i}");
                     Console.WriteLine(garage[i]);
                 }
             }

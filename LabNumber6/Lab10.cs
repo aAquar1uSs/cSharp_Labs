@@ -72,8 +72,7 @@ namespace LabNumber6
 
         public static void СauseReverseArray(int[] array)
         {
-            int[] arr = array.Reverse_ExtensionMethod();
-            ArrayExtension.ShowArray(array);
+            ArrayExtension.ShowArray(array.Reverse_ExtensionMethod());
         }
 
         public static void СausePrintOddIndexes(int[] arr)

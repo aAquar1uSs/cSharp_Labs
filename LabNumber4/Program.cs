@@ -108,9 +108,9 @@ namespace LabNumber4
         
         public void ConsoleHandler()
         {
-            Console.Write("Enter number =");
+            Console.Write("Enter number = ");
             SetNumber(Convert.ToInt32(Console.ReadLine()));
-            Console.Write("Enter array size");
+            Console.Write("Enter array size = ");
             SetArraySize(Convert.ToInt32(Console.ReadLine()));
         }
 

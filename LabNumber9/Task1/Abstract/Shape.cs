@@ -32,9 +32,9 @@ namespace LabNumber9.Abstract
 
         public override string ToString()
         {
-            return "Name: " + Name + "\n" + "Amount top: " + AmountTop + "\n" 
-                + "Color: " + Color + "\n" + "Perimeter: " + calculatePerimeter() +
-               "\n" + "Area: " + calculateArea();
+            return $"Name: {Name}" + "\n" + $"Amount top: {AmountTop}" + "\n" 
+                + $"Color: {Color}" + "\n" + $"Perimeter: {calculatePerimeter()}" +
+               "\n" + $"Area: {calculateArea()}";
         }
 
         public abstract void Draw();

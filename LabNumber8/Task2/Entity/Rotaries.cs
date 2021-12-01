@@ -80,8 +80,8 @@ namespace LabNumber8.Task2.Entity
                 buffer += validSymbols[i];
             }
             return "Rotaries phone: " + '\n' +
-                "Phone number: " + phoneNumber + '\n' +
-                "Valid symbols: " + buffer ;
+                $"Phone number: {phoneNumber}" + '\n' +
+                $"Valid symbols: {buffer}" ;
         }
 
     }

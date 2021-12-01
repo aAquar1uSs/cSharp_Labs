@@ -47,7 +47,7 @@ namespace LabNumber9.Task1
         public override void  Draw()
         {
             ColorManager.setConcoleColor(Color);
-            Console.WriteLine("Name= " + Name + "\n" + "Size= " + sideLength);
+            Console.WriteLine($"Name= {Name}" + "\n" + $"Size= {sideLength}");
             Console.ResetColor();
         }
     }

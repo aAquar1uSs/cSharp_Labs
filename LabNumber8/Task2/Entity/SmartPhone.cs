@@ -51,12 +51,12 @@ namespace LabNumber8.Task2.Entity
             }
 
             return "Colour Phone: " + '\n' +
-                "Resolution: " + resolution + '\n' +
-                "Number phone: " + phoneNumber + '\n' +
-                "Second number: " + secondNumber + '\n' +
-                "Color: " + color + '\n' +
-                "Size screen: " + sizeScreen + '\n' +
-                "Valid symbols: " + buffer;
+                $"Resolution: {resolution}" + '\n' +
+                $"Number phone: {phoneNumber}" + '\n' +
+                $"Second number: {secondNumber}" + '\n' +
+                $"Color: {color}" + '\n' +
+                $"Size screen: {sizeScreen}" + '\n' +
+                $"Valid symbols: {buffer}";
         }
     }
 }

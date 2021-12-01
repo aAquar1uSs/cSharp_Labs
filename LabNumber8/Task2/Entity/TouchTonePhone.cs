@@ -38,8 +38,8 @@ namespace LabNumber8.Task2.Entity
             }
 
             return "Touch Tone Phone: " + '\n' +
-                "Number: " + phoneNumber + '\n' + 
-                "Valid symbols: " + buffer;
+                $"Number: {phoneNumber}" + '\n' + 
+                $"Valid symbols: {buffer}";
         }
 
 

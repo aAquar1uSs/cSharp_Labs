@@ -51,7 +51,7 @@ namespace LabNumber9.Task1.Entity
         public override void Draw()
         {
             ColorManager.setConcoleColor(Color);
-            Console.WriteLine("Name= " + Name + "\n" + "Size= " + sizeSide);
+            Console.WriteLine($"Name= {Name}" + "\n" + $"Size= {sizeSide}");
             Console.ResetColor();
         }
     }
