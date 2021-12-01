@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LabNumber6.Utils
 {
-    class ConsoleHandler
+    static class ConsoleHandler
     {
         public static int ReadNumbersFromConsole()
         {

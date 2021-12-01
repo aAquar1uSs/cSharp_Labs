@@ -14,26 +14,19 @@ namespace LabNumber2
         private double k;
         private double result;
 
+        public double N { get => n; set => n = value; }
+        public double K { get => k; set => k = value; }
+
         public Program()
         {
             //init variables
-            nn = 0;
-            nk = 0;
-            result = 0;
+            nn = default;
+            nk = default;
+            result = default;
 
             //init methods
             ConsoleHandler();
             SearchOfUnknownVariables();
-        }
-
-        public void SetN(double n)
-        {
-            this.n = n;
-        }
-
-        public void SetK(double k)
-        {
-            this.k = k;
         }
 
         public void Calculate()
@@ -46,15 +39,15 @@ namespace LabNumber2
            
             for(double i = nn; i <= nk; i++)
             {
-                result += (Math.Pow(k, 2) - Math.Pow((-1), k + 1) * Math.Pow(k, 3)) /
-                    Math.Pow(k, 2) + k + 1;
+                result += (Math.Pow(K, 2) - Math.Pow((-1), K + 1) * Math.Pow(K, 3)) /
+                    Math.Pow(K, 2) + K + 1;
             }
         }
 
         private void SearchOfUnknownVariables()
         {
-            nn = Math.Pow(n,2);
-            nk = n * k;
+            nn = Math.Pow(N,2);
+            nk = N * K;
         }
 
         private bool IsValidate(double i1,double i2)
@@ -69,9 +62,9 @@ namespace LabNumber2
         public void ConsoleHandler()
         {
             Console.Write("N =");
-            SetN(Convert.ToDouble(Console.ReadLine()));
+            N = Convert.ToDouble(Console.ReadLine());
             Console.Write("k =");
-            SetK(Convert.ToDouble(Console.ReadLine()));
+            K = Convert.ToDouble(Console.ReadLine());
 
         }
 

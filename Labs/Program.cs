@@ -11,43 +11,35 @@ namespace Labs
         private double voltage; //напряжение
         private double amperage; // Сила тока
 
+        public double Voltage
+        {
+            get => voltage;
+            set => voltage = value;
+        }
+
+        public double Amperage
+        {
+            get => amperage;
+            set => amperage = value;
+        }
+
         public Program()
         {
-            voltage = 0;
-            amperage = 0;
-        }
-
-        public double GetVoltage()
-        {
-            return voltage;
-        }
-
-        public void SetVoltage(double v)
-        {
-            this.voltage = v;
-        }
-
-        public double GetAmperage()
-        {
-            return amperage;
-        }
-
-        public void SetAmperage(double a)
-        {
-            this.amperage = a;
+            Voltage = default;
+            Amperage = default; 
         }
 
         public double CalculateR()
         {
-            return voltage / amperage;
+            return Voltage / Amperage;
         }
 
         public void ConsoleHandler()
         {
             Console.Write("Voltage =");
-            SetVoltage(Convert.ToDouble(Console.ReadLine()));
+            Voltage = Convert.ToDouble(Console.ReadLine());
             Console.Write("Amperage =");
-            SetAmperage(Convert.ToDouble(Console.ReadLine()));
+            Amperage =Convert.ToDouble(Console.ReadLine());
         }
 
         static void Main(string[] args)

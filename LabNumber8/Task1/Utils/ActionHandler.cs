@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using LabNumber8.Task1.Entity;
 
 namespace LabNumber8.Task1.Utils
 {

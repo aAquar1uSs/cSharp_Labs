@@ -1,17 +1,14 @@
-﻿using LabNumber8.Utils;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System;
+using LabNumber8.Entity;
+using LabNumber8.Utils;
 
-namespace LabNumber8.Entity
+namespace LabNumber8.Task1.Entity
 {
     class Garage
     {
         private static int defaultCapacity = 3;
-        private int capacity;
-        private Car[] garage;
+        private readonly int capacity;
+        private readonly Car[] garage;
         private Car currentCar;
 
         public delegate void ErrorStateHandler(string message);
