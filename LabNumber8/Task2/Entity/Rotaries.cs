@@ -11,15 +11,10 @@ namespace LabNumber8.Task2.Entity
         protected int phoneNumber;
         protected string[] validSymbols;
 
-        public Rotaries()
-        {
-            SetPhoneNumber(0);
-            SetValidSymbol(new string[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "0" });
-        }
-
         public Rotaries(int number)
         {
             SetPhoneNumber(number);
+            SetValidSymbol(new string[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "0" });
         }
 
         public void SetPhoneNumber(int number)

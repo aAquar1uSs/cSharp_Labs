@@ -17,20 +17,6 @@ namespace LabNumber9.Task1.Entity
 
         protected override string Name { get; }
 
-        public Triangle(string name)
-        {
-            Name = name;
-            Color = "Yellow";
-            sizeSide = 10;
-        }
-
-        public Triangle(string name, double size)
-        {
-            Name = name;
-            sizeSide = size;
-            Color = "Yellow";
-        }
-
         public Triangle(string name, double size, string color)
             :base(color)
         {
@@ -38,12 +24,12 @@ namespace LabNumber9.Task1.Entity
             sizeSide = size;
         }
 
-        public override double calculatePerimeter()
+        public override double CalculatePerimeter()
         {
             return sizeSide * 3;
         }
 
-        public override double calculateArea()
+        public override double CalculateArea()
         {
             return (Math.Sqrt(3) / 4) * (Math.Pow(sizeSide, 2));
         }

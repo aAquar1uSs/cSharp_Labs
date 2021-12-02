@@ -8,15 +8,10 @@ namespace LabNumber8.Task2.Entity
 { 
     class TouchTonePhone : Rotaries
     {
-        public TouchTonePhone()
+        public TouchTonePhone(int number) 
+            : base(number)
         {
-            SetPhoneNumber(0);
             SetValidSymbol(new string[12] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "*", "#" });
-        }
-
-        public TouchTonePhone(int number)
-        {
-            SetPhoneNumber(number);
         }
         
         public override void MakeTheCall()

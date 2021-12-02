@@ -24,7 +24,7 @@ namespace LabNumber9.Task2.Collection
             shapes = new List<Shape>(size);
         } 
 
-        public bool add(Shape entity)
+        public bool Add(Shape entity)
         {
             if(shapes.Count > size)
             {
@@ -35,7 +35,7 @@ namespace LabNumber9.Task2.Collection
             return true;
         }
 
-        public bool delete(Shape entity)
+        public bool Delete(Shape entity)
         {
             if(shapes.Contains(entity))
             {
@@ -46,11 +46,11 @@ namespace LabNumber9.Task2.Collection
             return false;
         }
 
-        public bool delete(string name)
+        public bool Delete(string name)
         {
            foreach (Shape entity in shapes) 
            {
-                if (entity.getName().Equals(name))
+                if (entity.GetName().Equals(name))
                 {
                     shapes.Remove(entity);
                     return true;
@@ -60,12 +60,12 @@ namespace LabNumber9.Task2.Collection
             return false;
         }
 
-        public Shape get(int index)
+        public Shape Get(int index)
         {
             return shapes.ElementAt(index);
         }
 
-        public void printAll()
+        public void PrintAll()
         {
             foreach (Shape entity in shapes)
             {

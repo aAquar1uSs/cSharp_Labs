@@ -12,20 +12,6 @@ namespace LabNumber9.Task1
         protected override int AmountTop => 4;
         protected override string Name {get;}
 
-        public Square(string name)
-        {
-           Name = name;
-           Color = "Green";
-           sideLength = 6;
-        }
-
-        public Square(string name, double sizeSide)
-        {
-            Name = name;
-            Color = "Green";
-            sideLength = sizeSide;
-        }
-
         public Square(string name, double sizeSide, string color) 
             : base(color)
         {
@@ -34,12 +20,12 @@ namespace LabNumber9.Task1
         }
 
 
-        public override double calculatePerimeter()
+        public override double CalculatePerimeter()
         {
             return sideLength * 4;
         }
 
-        public override double calculateArea()
+        public override double CalculateArea()
         {
             return Math.Pow(sideLength,2);
         }

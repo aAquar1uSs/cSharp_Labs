@@ -12,29 +12,15 @@ namespace LabNumber8.Task2.Entity
         protected bool isTwoSimCard;
         protected int secondNumber;
 
-        public ColourPhone()
-        {
-            SetPhoneNumber(0);
-            SetNumberColors(0);
-            IsTwoSimCard(true);
-            SetSecondNumber(0);
-            SetResolution(0);
-            SetColor("");
-            SetSizeScreen(0);
-            SetValidSymbol(new string[15] { "1", "2", "3", "4", "5", 
-                "6", "7", "8", "9", "0", "*", "#", "!", "-", "+" });
-        }
-
         public ColourPhone(int number,int numberColor,bool isTwoSimCard, int secondNumber,
             float res, double sizeScreen, string color)
+            : base(number,res,sizeScreen,color)
         {
-            SetPhoneNumber(number);
             SetNumberColors(numberColor);
             IsTwoSimCard(isTwoSimCard);
             SetSecondNumber(secondNumber);
-            SetResolution(res);
-            SetColor(color);
-            SetSizeScreen(sizeScreen);
+            SetValidSymbol(new string[15] { "1", "2", "3", "4", "5",
+                "6", "7", "8", "9", "0", "*", "#", "!", "-", "+" });
         }
 
         public void SetNumberColors(int numb)

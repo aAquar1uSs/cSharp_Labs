@@ -11,21 +11,14 @@ namespace LabNumber8.Task2.Entity
         protected float resolution;
         protected double sizeScreen;
         protected string color;
-        
-        public BlackWhiteScreenPhone()
-        {
-            SetPhoneNumber(0);
-            SetResolution(0);
-            SetColor("");
-            SetValidSymbol(new string[15] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "*", "#", "!", "-", "+" });
-        }
 
         public BlackWhiteScreenPhone(int number ,float res,double sizeScreen,string color)
+            : base(number)
         {
-            SetPhoneNumber(number);
             SetResolution(res);
             SetSizeScreen(sizeScreen);
             SetColor(color);
+            SetValidSymbol(new string[15] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "*", "#", "!", "-", "+" });
         }
 
         public void SetResolution(float resolution)

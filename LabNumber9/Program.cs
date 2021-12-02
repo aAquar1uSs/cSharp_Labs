@@ -20,22 +20,22 @@ namespace LabNumber9
             Console.WriteLine(triangle);
 
             Console.WriteLine("Circle----------------------------------------------");
-            Shape circle = new Circle("Circle",6);
+            Shape circle = new Circle("Circle",6,"Blue");
             Console.WriteLine(circle);
 
             Console.WriteLine("Picture----------------------------------------------");
             Picture picture = new Picture(4);
 
-            picture.add(triangle);
-            picture.add(circle);
-            picture.add(square);
-            picture.add(triangle);
+            picture.Add(triangle);
+            picture.Add(circle);
+            picture.Add(square);
+            picture.Add(triangle);
 
             //picture.delete("Square");
             Console.WriteLine("------------------------------------------------------");
-            Console.WriteLine(picture.get(1));
+            Console.WriteLine(picture.Get(1));
             Console.WriteLine("------------------------------------------------------");
-            picture.printAll();
+            picture.PrintAll();
 
             Painter.paint(picture);
         }

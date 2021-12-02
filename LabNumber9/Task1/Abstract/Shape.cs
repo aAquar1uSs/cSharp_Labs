@@ -15,26 +15,20 @@ namespace LabNumber9.Abstract
         {
             Color = color;
         }
-
-        public Shape()
-        {
-            Color = "None";
-        }
-        
-        public string getName()
+        public string GetName()
         {
             return Name;
         }
 
-        public abstract double calculateArea();
+        public abstract double CalculateArea();
 
-        public abstract double calculatePerimeter();
+        public abstract double CalculatePerimeter();
 
         public override string ToString()
         {
             return $"Name: {Name}" + "\n" + $"Amount top: {AmountTop}" + "\n" 
-                + $"Color: {Color}" + "\n" + $"Perimeter: {calculatePerimeter()}" +
-               "\n" + $"Area: {calculateArea()}";
+                + $"Color: {Color}" + "\n" + $"Perimeter: {CalculatePerimeter()}" +
+               "\n" + $"Area: {CalculateArea()}";
         }
 
         public abstract void Draw();
