@@ -8,58 +8,43 @@ namespace LabNumber8.Task2.Entity
 {
     class BlackWhiteScreenPhone : TouchTonePhone
     {
-        protected float resolution;
-        protected double sizeScreen;
-        protected string color;
+        private float resolution;
+        private double sizeScreen;
+        private string color;
+
+        protected float Resolution { get => resolution; set => resolution = value; }
+        protected double SizeScreen { get => sizeScreen; set => sizeScreen = value; }
+        protected string Color { get => color; set => color = value; }
 
         public BlackWhiteScreenPhone(int number ,float res,double sizeScreen,string color)
             : base(number)
         {
-            SetResolution(res);
-            SetSizeScreen(sizeScreen);
-            SetColor(color);
-            SetValidSymbol(new string[15] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "*", "#", "!", "-", "+" });
+            Resolution = res;
+            SizeScreen = sizeScreen;
+            Color = color;
+            ValidSymbols = new string[15] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "*", "#", "!", "-", "+" };
         }
 
-        public void SetResolution(float resolution)
-        {
-            this.resolution = resolution;
-        }
 
-        public void SetSizeScreen(double size)
-        {
-            sizeScreen = size;
-        }
+        public void SendSMS(string message) => Console.WriteLine("You sent this SMS: " + message);
 
-        public void SetColor(string color)
-        {
-            this.color = color;
-        }
+        public void TakeSMS() => Console.WriteLine("Take SMS");
 
-        public override void SendSMS(string message)
-        {
-            Console.WriteLine("You sent this SMS: " + message);
-        }
-
-        public override void TakeSMS()
-        {
-            Console.WriteLine("Take SMS");
-        }
 
         public override string ToString()
         {
-            string buffer = "";
-            for (int i = 0; i < validSymbols.Length; i++)
+            StringBuilder stringBuilder = new StringBuilder();
+            for (int i = 0; i < ValidSymbols.Length; i++)
             {
-                buffer += validSymbols[i];
+                stringBuilder.Append(ValidSymbols[i]);
             }
 
             return "Black-White Screen Phone: " + '\n' +
-                $"Resolution: {resolution}" + '\n' +
-                $"Number phone: {phoneNumber}" + '\n' +
-                $"Color: {color}" + '\n' +
-                $"Size screen: {sizeScreen}" + '\n' +
-                $"Valid symbols: {buffer}";
+                $"Resolution: {Resolution}" + '\n' +
+                $"Number phone: {PhoneNumber}" + '\n' +
+                $"Color: {Color}" + '\n' +
+                $"Size screen: {SizeScreen}" + '\n' +
+                $"Valid symbols: {stringBuilder}";
 
         }
 

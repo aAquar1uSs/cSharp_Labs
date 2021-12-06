@@ -11,30 +11,23 @@ namespace LabNumber8.Task2.Entity
         public TouchTonePhone(int number) 
             : base(number)
         {
-            SetValidSymbol(new string[12] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "*", "#" });
+            ValidSymbols = new string[12] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "*", "#" };
         }
         
-        public override void MakeTheCall()
-        {
-            base.MakeTheCall();
-        }
+        public new void TakeTheCall() => Console.WriteLine(PhoneNumber + "This caller calls you!");
 
-        public override void TakeTheCall()
-        {
-            Console.WriteLine(phoneNumber + "This caller calls you!");
-        }
 
         public override string ToString()
         {
-            string buffer = "";
-            for(int i = 0; i < validSymbols.Length; i++)
+            StringBuilder stringBuilder = new StringBuilder();
+            for(int i = 0; i < ValidSymbols.Length; i++)
             {
-                buffer += validSymbols[i];
+                stringBuilder.Append(ValidSymbols[i]);
             }
 
             return "Touch Tone Phone: " + '\n' +
-                $"Number: {phoneNumber}" + '\n' + 
-                $"Valid symbols: {buffer}";
+                $"Number: {PhoneNumber}" + '\n' + 
+                $"Valid symbols: {stringBuilder}";
         }
 
 

@@ -51,7 +51,6 @@
     <Compile Include="Task1\Utils\ConsoleHandler.cs" />
     <Compile Include="Task2\Entity\BlackWhiteScreenPhone.cs" />
     <Compile Include="Task2\Entity\ColourPhone.cs" />
-    <Compile Include="Task2\Entity\Phone.cs" />
     <Compile Include="Task2\Entity\Rotaries.cs" />
     <Compile Include="Task2\Entity\SmartPhone.cs" />
     <Compile Include="Task2\Entity\TouchTonePhone.cs" />

@@ -12,35 +12,31 @@ namespace LabNumber8.Task2.Entity
             float res, double sizeScreen, string color)
             : base(number,numberColor,isTwoSimCard,secondNumber,res,sizeScreen,color)
         {
-            SetValidSymbol(new string[15] { "1", "2", "3", "4", "5",
-                "6", "7", "8", "9", "0", "*", "#", "!", "-", "+" });
+            ValidSymbols = new string[15] { "1", "2", "3", "4", "5",
+                "6", "7", "8", "9", "0", "*", "#", "!", "-", "+" };
         }
 
-        public override void CreatePhoto()
-        {
-            Console.WriteLine("You create photo!");
-        }
+        public  void CreatePhoto() => Console.WriteLine("You create photo!");
 
-        public override void CreateVideo()
-        {
-            Console.WriteLine("You create video!");
-        }
+
+        public void CreateVideo() => Console.WriteLine("You create video!");
+
 
         public override string ToString()
         {
-            string buffer = "";
-            for (int i = 0; i < validSymbols.Length; i++)
+            StringBuilder sb = new StringBuilder(); 
+            for (int i = 0; i < ValidSymbols.Length; i++)
             {
-                buffer += validSymbols[i];
+                sb.Append(ValidSymbols[i]);
             }
 
             return "Colour Phone: " + '\n' +
-                $"Resolution: {resolution}" + '\n' +
-                $"Number phone: {phoneNumber}" + '\n' +
-                $"Second number: {secondNumber}" + '\n' +
-                $"Color: {color}" + '\n' +
-                $"Size screen: {sizeScreen}" + '\n' +
-                $"Valid symbols: {buffer}";
+                $"Resolution: {Resolution}" + '\n' +
+                $"Number phone: {PhoneNumber}" + '\n' +
+                $"Second number: {SecondNumber}" + '\n' +
+                $"Color: {Color}" + '\n' +
+                $"Size screen: {SizeScreen}" + '\n' +
+                $"Valid symbols: {sb}";
         }
     }
 }

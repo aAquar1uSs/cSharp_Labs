@@ -8,66 +8,53 @@ namespace LabNumber8.Task2.Entity
 {
     class ColourPhone : BlackWhiteScreenPhone
     {
-        protected int numberColor;
-        protected bool isTwoSimCard;
-        protected int secondNumber;
+        private int numberColor;
+        private bool isTwoSimCard1;
+        private int secondNumber;
+
+        protected int NumberColor { get => numberColor; set => numberColor = value; }
+        protected bool IsTwoSimCard1 { get => isTwoSimCard1; set => isTwoSimCard1 = value; }
+        protected int SecondNumber { get => secondNumber; set => secondNumber = value; }
 
         public ColourPhone(int number,int numberColor,bool isTwoSimCard, int secondNumber,
             float res, double sizeScreen, string color)
             : base(number,res,sizeScreen,color)
         {
-            SetNumberColors(numberColor);
-            IsTwoSimCard(isTwoSimCard);
+            NumberColor = numberColor;
+            IsTwoSimCard1 = isTwoSimCard;
             SetSecondNumber(secondNumber);
-            SetValidSymbol(new string[15] { "1", "2", "3", "4", "5",
-                "6", "7", "8", "9", "0", "*", "#", "!", "-", "+" });
+            ValidSymbols = new string[15] { "1", "2", "3", "4", "5",
+                "6", "7", "8", "9", "0", "*", "#", "!", "-", "+" };
         }
-
-        public void SetNumberColors(int numb)
-        {
-            numberColor = numb;
-        }
-
-        public void IsTwoSimCard(bool b)
-        {
-            isTwoSimCard = b;
-        }
-
         public void SetSecondNumber(int secondNumber)
         {
-            if (isTwoSimCard)
+            if (IsTwoSimCard1)
             {
-                this.secondNumber = secondNumber;
+                SecondNumber = secondNumber;
             }
             else
                 Console.WriteLine("Error:: You have only one SIM Card");
         }
 
-        public override void SendMMS(string message)
-        {
-            Console.WriteLine("You sent this MMS: " + message);
-        }
+        public void SendMMS(string message) => Console.WriteLine("You sent this MMS: " + message);
 
-        public override void TakeMMS()
-        {
-            Console.WriteLine("New MMS!!");
-        }
+        public void TakeMMS() => Console.WriteLine("New MMS!!");
 
         public override string ToString()
         {
-            string buffer = "";
-            for (int i = 0; i < validSymbols.Length; i++)
+            StringBuilder stringBuilder = new StringBuilder();
+            for (int i = 0; i < ValidSymbols.Length; i++)
             {
-                buffer += validSymbols[i];
+                stringBuilder.Append(ValidSymbols[i]);
             }
 
             return "Colour Phone: " + '\n' +
-                $"Resolution: {resolution}" + '\n' +
-                $"Number phone: {phoneNumber}" + '\n' +
-                $"Second number: {secondNumber}" + '\n' +
-                $"Color: {color}" + '\n' +
-                $"Size screen: {sizeScreen}" + '\n' +
-                $"Valid symbols: {buffer}";
+                $"Resolution: {Resolution}" + '\n' +
+                $"Number phone: {PhoneNumber}" + '\n' +
+                $"Second number: {SecondNumber}" + '\n' +
+                $"Color: {Color}" + '\n' +
+                $"Size screen: {SizeScreen}" + '\n' +
+                $"Valid symbols: {stringBuilder}";
 
         }
 
