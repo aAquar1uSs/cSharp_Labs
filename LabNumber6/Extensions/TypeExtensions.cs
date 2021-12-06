@@ -40,23 +40,12 @@ namespace LabNumber6.Extensions
 
             ConvertDecimalPartToInt(ref dPart, num, iPart);
 
-            int remainder;
-
             // reverse the integer part
-            while ((remainder = iPart % 10) != 0)
-            {
-                Console.Write(remainder);
-                iPart = iPart / 10;
-            }
-
+            Console.Write(iPart.Reverse_ExtensionMethod());
             Console.Write(".");
 
             // reverse the decimal part
-            while ((remainder = (int)dPart % 10) != 0)
-            {
-                Console.Write(remainder);
-                dPart = dPart / 10;
-            }
+            Console.Write(((int)dPart).Reverse_ExtensionMethod());
         }
 
         public static int[] Reverse_ExtensionMethod(this int[] array)   

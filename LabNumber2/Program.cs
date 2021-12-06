@@ -37,7 +37,7 @@ namespace LabNumber2
                 return ;
             }
            
-            for(double i = nn; i <= nk; i++)
+            for(var i = nn; i <= nk; i++)
             {
                 result += (Math.Pow(K, 2) - Math.Pow((-1), K + 1) * Math.Pow(K, 3)) /
                     Math.Pow(K, 2) + K + 1;
