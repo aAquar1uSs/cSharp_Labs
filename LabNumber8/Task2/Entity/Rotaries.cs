@@ -20,16 +20,10 @@ namespace LabNumber8.Task2.Entity
             ValidSymbols = new string[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "0" }
         }
 
-  
-        public void MakeTheCall()
-        {
-            Console.WriteLine("You make the call!");
-        }
+        public void MakeTheCall() => Console.WriteLine("You make the call!");
 
-        public void TakeTheCall()
-        {
-            Console.WriteLine("You take the call!");
-        }
+        public void TakeTheCall() => Console.WriteLine("You take the call!");
+    
 
         public  override string ToString()
         {

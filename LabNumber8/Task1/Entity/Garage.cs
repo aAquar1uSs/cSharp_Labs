@@ -118,22 +118,30 @@ namespace LabNumber8.Task1.Entity
             }
         }
 
-        public void FindCarsByParametrs(string parametr, int index)
+        public void FindCarsByParametrs(string parametr, int index) 
         {
-            if(index == 1)
+            switch(index)
             {
-                FindByName(parametr);
-            } else if(index == 2)
-            {
-                FindByModel(parametr);
-            } else if (index == 3)
-            {
-                FindByYear(Convert.ToInt32(parametr));
-            } else if(index == 4)
-            {
-                FindByColor(parametr);
+                case 1:
+                    FindByName(parametr);
+                    break;
+                case 2:
+                    FindByModel(parametr);
+                    break;
+                case 3:
+                    FindByYear(Convert.ToInt32(parametr));
+                    break;
+                case 4:
+                    FindByColor(parametr);
+                    break;
+                default:
+                    Console.WriteLine("Error::Wrong operation!");
+                    Console.ReadLine();
+                    break;
+
             }
         }
+
 
         private void FindByName(string name)
         {
