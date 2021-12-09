@@ -8,12 +8,12 @@ namespace LabNumber8.Task2.Entity
 {
     class SmartPhone : ColourPhone
     {
-        public SmartPhone(int number, int numberColor, bool isTwoSimCard, int secondNumber,
+        public SmartPhone(string number, int numberColor, bool isTwoSimCard, int secondNumber,
             float res, double sizeScreen, string color)
             : base(number,numberColor,isTwoSimCard,secondNumber,res,sizeScreen,color)
         {
-            ValidSymbols = new string[15] { "1", "2", "3", "4", "5",
-                "6", "7", "8", "9", "0", "*", "#", "!", "-", "+" };
+            ValidSymbols = new char[15] { '1', '2', '3', '4', '5',
+                '6', '7', '8', '9', '0', '*', '#', '!', '-', '+' };
         }
 
         public  void CreatePhoto() => Console.WriteLine("You create photo!");

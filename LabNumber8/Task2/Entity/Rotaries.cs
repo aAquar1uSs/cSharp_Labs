@@ -8,16 +8,16 @@ namespace LabNumber8.Task2.Entity
 {
     class Rotaries
     {
-        private int phoneNumber;
-        private string[] validSymbols;
+        private string phoneNumber;
+        private char[] validSymbols;
 
-        protected int PhoneNumber { get => phoneNumber; set => phoneNumber = value; }
-        protected string[] ValidSymbols { get => validSymbols; set => validSymbols = value; }
+        protected string PhoneNumber { get => phoneNumber; set => phoneNumber = value; }
+        protected char[] ValidSymbols { get => validSymbols; set => validSymbols = value; }
 
-        public Rotaries(int number)
+        public Rotaries(string number)
         {
             PhoneNumber = number ;
-            ValidSymbols = new string[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "0" }
+            ValidSymbols = new char[] { '1', '2', '3', '4', '5', '6', '7', '8', '9', '0' }
         }
 
         public void MakeTheCall() => Console.WriteLine("You make the call!");

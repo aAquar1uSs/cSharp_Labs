@@ -16,13 +16,13 @@ namespace LabNumber8.Task2.Entity
         protected double SizeScreen { get => sizeScreen; set => sizeScreen = value; }
         protected string Color { get => color; set => color = value; }
 
-        public BlackWhiteScreenPhone(int number ,float res,double sizeScreen,string color)
+        public BlackWhiteScreenPhone(string number ,float res,double sizeScreen,string color)
             : base(number)
         {
             Resolution = res;
             SizeScreen = sizeScreen;
             Color = color;
-            ValidSymbols = new string[15] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "*", "#", "!", "-", "+" };
+            ValidSymbols = new char[15] { '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '*', '#', '!', '-', '+' };
         }
 
 

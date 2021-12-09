@@ -16,15 +16,15 @@ namespace LabNumber8.Task2.Entity
         protected bool IsTwoSimCard1 { get => isTwoSimCard1; set => isTwoSimCard1 = value; }
         protected int SecondNumber { get => secondNumber; set => secondNumber = value; }
 
-        public ColourPhone(int number,int numberColor,bool isTwoSimCard, int secondNumber,
+        public ColourPhone(string number,int numberColor,bool isTwoSimCard, int secondNumber,
             float res, double sizeScreen, string color)
             : base(number,res,sizeScreen,color)
         {
             NumberColor = numberColor;
             IsTwoSimCard1 = isTwoSimCard;
             SetSecondNumber(secondNumber);
-            ValidSymbols = new string[15] { "1", "2", "3", "4", "5",
-                "6", "7", "8", "9", "0", "*", "#", "!", "-", "+" };
+            ValidSymbols = new char[15] { '1', '2', '3', '4', '5',
+                '6', '7', '8', '9', '0', '*', '#', '!', '-', '+' };
         }
         public void SetSecondNumber(int secondNumber)
         {
@@ -32,8 +32,6 @@ namespace LabNumber8.Task2.Entity
             {
                 SecondNumber = secondNumber;
             }
-            else
-                Console.WriteLine("Error:: You have only one SIM Card");
         }
 
         public void SendMMS(string message) => Console.WriteLine("You sent this MMS: " + message);

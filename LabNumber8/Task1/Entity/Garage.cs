@@ -138,7 +138,6 @@ namespace LabNumber8.Task1.Entity
                     Console.WriteLine("Error::Wrong operation!");
                     Console.ReadLine();
                     break;
-
             }
         }
 
